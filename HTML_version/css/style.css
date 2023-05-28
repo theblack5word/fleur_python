@@ -1,0 +1,28 @@
+html {
+    margin:0;
+    padding:0;
+    height: 100vh;
+}
+body {
+    margin-top:0;
+    padding-top:0;
+    height: 100%;
+}
+
+header {
+    background: white;
+    height: 20vh;
+}
+
+main {
+    background: #B5B2B2;
+    height: 70%;
+}
+
+.test {
+    height: 10vh;
+}
+
+.logo_area {
+    height: 10vh;
+}

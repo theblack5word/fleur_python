@@ -1,8 +1,44 @@
-html {
+html{
     margin:0;
     padding:0;
     height: 100vh;
+    font-family: Avenir, sans-serif;
 }
+
+ol, ul {
+    padding-left: 0;
+}
+
+nav {
+    margin: auto;
+    padding-top: 5vh;
+    width: 600px;
+    height: 40%;
+}
+
+.active_nav_ling {
+    color: rgba(137, 61, 122, 1);
+    font-weight: bold;
+}
+
+nav ul {
+    align-items: center;
+    justify-content: space-around;
+    /*padding-left:5em;*/
+    list-style-type: none;
+    display : flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: grey;
+    text-decoration: none;
+}
+
+nav div{
+    flex: 1;
+}
+
 body {
     margin-top:0;
     padding-top:0;
@@ -11,6 +47,7 @@ body {
 
 header {
     background: white;
+    max-height: 300px;
     height: 20vh;
 }
 
@@ -24,5 +61,14 @@ main {
 }
 
 .logo_area {
-    height: 10vh;
+    height: 60%;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.img_logo {
+    max-height: 100%;
+    width: auto;
+    margin: auto;
 }

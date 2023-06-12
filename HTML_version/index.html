@@ -5,40 +5,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js" ></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Projet Structure</title>
 </head>
 <body>
 <header>
-    <div class="logo_area">
-        <img class="img_logo" src="medias/img/logo.png" alt="logo du site, une fleur de lotus">
+    <div class="py-2">
+        <img class="rounded mx-auto d-block" src="medias/img/logo.png" alt="logo du site, une fleur de lotus">
     </div>
-    <nav class>
-        <ul class="">
-            <li class="">
-                <a class="active_nav_ling" href="index.html">Accueil</a>
-            </li>
-            <li class="">
-                <a class="" href="quisuisje.html">Qui suis-je</a>
-            </li>
-            <li class="">
-                <a class="" href="activites.html">Activités</a>
-            </li>
-            <li class="">
-                <a class="" href="contactezmoi.html">Contactez-moi</a>
-            </li>
-            <li class="">
-                <a class="" href="tarifs.html">Tarifs</a>
-            </li>
-            <li class="">
-                <a class="" href="livred-or.html">Livre d'or</a>
-            </li>
-        </ul>
-    </nav>
 
+<!--    <nav class>-->
+<!--        <ul class="">-->
+<!--            <li class="">-->
+<!--                <a class="active_nav_ling" href="index.html">Accueil</a>-->
+<!--            </li>-->
+<!--            <li class="">-->
+<!--                <a class="" href="quisuisje.html">Qui suis-je</a>-->
+<!--            </li>-->
+<!--            <li class="">-->
+<!--                <a class="" href="activites.html">Activités</a>-->
+<!--            </li>-->
+<!--            <li class="">-->
+<!--                <a class="" href="contactezmoi.html">Contactez-moi</a>-->
+<!--            </li>-->
+<!--            <li class="">-->
+<!--                <a class="" href="tarifs.html">Tarifs</a>-->
+<!--            </li>-->
+<!--            <li class="">-->
+<!--                <a class="" href="livred-or.html">Livre d'or</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<div class="container">
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+            <a class="navbar-brand d-none d-md-block d-lg-none active_nav_link" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="container navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active_nav_link href=index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quisuisje.html">Qui suis-je</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activites.html">Activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactezmoi.html">Contactez-moi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarifs.html">Tarifs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="livred-or.html">Livre d'or</a>
+                    </li>
+                </ul>
+
+
+<!--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Link</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                            Dropdown-->
+<!--                        </a>-->
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--                            <li><hr class="dropdown-divider"></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link disabled">Disabled</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <form class="d-flex" role="search">-->
+<!--                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                    <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--                </form>-->
+            </div>
+        </div>
+    </nav>
+</div>
 </header>
 
 <main>
+    <div class="container text-center pt-5 h-100 ">
+        <div class="row ">
+            <div class="col ">
+                text elements
+            </div>
+            <div class="col position-relative">
+                <div class="position-absolute top-50 start-50">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" >
+                                <img src="/medias/img/logo.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/medias/img/lotusfleurdesereniteremovebgpreview13561-a773-300h.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/medias/img/logo.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 </main>
 <footer>

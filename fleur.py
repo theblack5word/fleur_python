@@ -2,15 +2,13 @@
 import sqlite3
 
 from flask import (
-        Flask,
-        g,
-        render_template,
-        request,
+    Flask,
+    g,
+    render_template,
+    request,
 )
 
-
 app = Flask(__name__)
-
 
 DATABASE = 'guestBook.db'
 
@@ -39,14 +37,12 @@ def query_db(query, *args):
 
 @app.route("/")
 def hello_world():
-    comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-    return render_template('newComment.html', comments=comments)
-#
-#
-# @app.route('/hello/')
-# @app.route('/hello/<name>')
-# def hello(name=None):
-#     return render_template('hello.html', name=name)
+    all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
+    return render_template('newComment.html', comments=all_comments)
+# @app.route("/guest_book/")
+# def guest_book():
+#     all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
+#     return render_template('newComment.html', comments=all_comments)
 
 
 @app.route('/comment/', methods=["POST"])
@@ -60,11 +56,11 @@ def comment():
         )
     """)
     query_db("INSERT INTO comments VALUES(NULL,?,?,?)",
-            request.form['name'],
-            request.form['visitDate'],
-            request.form['comment'],
-    )
-    #con.commit()
+             request.form['name'],
+             request.form['visitDate'],
+             request.form['comment'],
+             )
+    # con.commit()
     return str('données enregistrées')
 
 

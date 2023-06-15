@@ -1,9 +1,6 @@
-<html>
-    {% include 'components/header.html' without context%}
-    <head>
-        <title>commentaires</title>
-    </head>
-    <body>
+
+    {% include 'components/header.html' %}
+
         <table>
             <thead>
                 <tr>
@@ -20,5 +17,4 @@
                 {% endfor %}
             </tbody>
         </table>
-    </body>
-</html>
+    {% include 'components/footer.html' %}

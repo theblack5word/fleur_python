@@ -35,15 +35,26 @@ def query_db(query, *args):
     return rows
 
 
-@app.route("/")
-def hello_world():
-    all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-    return render_template('newComment.html', comments=all_comments)
+# @app.route("/")
+# def hello_world():
+#     all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
+#     return render_template('newComment.html', comments=all_comments)
 # @app.route("/guest_book/")
 # def guest_book():
 #     all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
 #     return render_template('newComment.html', comments=all_comments)
+@app.route("/")
+def hello_world():
+    last_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
+    return render_template('newComment.html', comments=last_comments)
 
+
+#
+#
+# @app.route('/hello/')
+# @app.route('/hello/<name>')
+# def hello(name=None):
+#     return render_template('hello.html', name=name)
 
 @app.route('/comment/', methods=["POST"])
 def comment():
@@ -66,10 +77,10 @@ def comment():
 
 @app.route('/comments/')
 def comments():
-    comments = query_db("SELECT name, visitDate, comment FROM comments")
+    all_comments = query_db("SELECT name, visitDate, comment FROM comments")
     # for comment in comments:
     #    return str((comment['name'], comment['visitDate'], comment['comment']))
-    return render_template('view_comments.html', comments=comments)
+    return render_template('view_comments.html', comments=all_comments)
 
 
 if __name__ == '__main__':

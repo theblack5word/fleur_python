@@ -35,18 +35,15 @@ def query_db(query, *args):
     return rows
 
 
-# @app.route("/")
-# def hello_world():
-#     all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-#     return render_template('newComment.html', comments=all_comments)
-# @app.route("/guest_book/")
-# def guest_book():
-#     all_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-#     return render_template('newComment.html', comments=all_comments)
 @app.route("/")
+def go_home():
+    return render_template('index.html')
+
+
+@app.route("/add_comment")
 def hello_world():
-    last_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-    return render_template('newComment.html', comments=last_comments)
+    recent_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
+    return render_template('newComment.html', comments=recent_comments)
 
 
 #
@@ -56,6 +53,7 @@ def hello_world():
 # def hello(name=None):
 #     return render_template('hello.html', name=name)
 
+
 @app.route('/comment/', methods=["POST"])
 def comment():
     query_db("""
@@ -64,7 +62,7 @@ def comment():
             name VARCHAR(100),
             visitDate DATE,
             comment VARCHAR(500)
-        )
+        );
     """)
     query_db("INSERT INTO comments VALUES(NULL,?,?,?)",
              request.form['name'],

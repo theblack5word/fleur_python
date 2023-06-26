@@ -1,0 +1,3 @@
+sqlite3 guestbook.db
+
+select * from comments;

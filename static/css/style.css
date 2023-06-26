@@ -9,18 +9,6 @@ html{
     font-family: Avenir, sans-serif;
 }
 
-/*ol, ul {*/
-/*    padding-left: 0;*/
-/*}*/
-
-/*nav {*/
-/*    margin: auto;*/
-/*    padding-top: 5vh;*/
-/*    width: 600px;*/
-/*    height: 40%;*/
-/*    background-color: white;*/
-/*}*/
-
 .active_nav_link {
     color: rgba(137, 61, 122, 1);
     font-weight: bold;
@@ -29,20 +17,10 @@ html{
 nav ul {
     align-items: center;
     justify-content: space-around;
-    /*padding-left:5em;*/
     list-style-type: none;
     display : flex;
     flex-wrap: wrap;
 }
-
-/*nav a {*/
-/*    color: grey;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*nav div{*/
-/*    flex: 1;*/
-/*}*/
 
 body {
     margin-top:0;
@@ -50,33 +28,10 @@ body {
     height: 100%;
 }
 
-/*header {*/
-/*    background: white;*/
-/*    max-height: 300px;*/
-/*    height: 20vh;*/
-/*}*/
-
 main {
     background: #B5B2B2;
     height: 70vh;
 }
-
-.test {
-    height: 10vh;
-}
-
-/*.logo_area {*/
-/*    height: 60%;*/
-/*    padding-top: 20px;*/
-/*    display: flex;*/
-/*    flex-wrap: nowrap;*/
-/*}*/
-
-/*.img_logo {*/
-/*    max-height: 100%;*/
-/*    width: auto;*/
-/*    margin: auto;*/
-/*}*/
 
 footer p, footer a {
     text-decoration: none;

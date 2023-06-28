@@ -1,142 +1,122 @@
 <!DOCTYPE html>
-<html lang="english">
-  <head>
-    <title>exported project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js" ></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Projet Structure</title>
+</head>
+<body>
+<header>
+    <div class="py-2">
+        <img class="rounded mx-auto d-block" src="medias/img/logo.png" alt="logo du site, une fleur de lotus">
+    </div>
+<div class="container">
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+            <a class="navbar-brand d-none d-md-block d-lg-none active_nav_link" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="container navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active_nav_link href=index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quisuisje.html">Qui suis-je</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activites.html">Activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactezmoi.html">Contactez-moi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarifs.html">Tarifs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="livred-or.html">Livre d'or</a>
+                    </li>
+                </ul>
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+            </div>
+        </div>
+    </nav>
+</div>
+</header>
 
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div>
-      <link href="./quisuisje.css" rel="stylesheet" />
-
-      <div class="quisuisje-container">
-        <div class="quisuisje-quisuisje">
-          <div class="quisuisje-footer">
-            <span class="quisuisje-text">
-              <span>
-                <span>Téléphone : 06 63 80 86 10</span>
-                <br />
-                <span>E-mail : contact@fleurdeserenite.eu</span>
-              </span>
-            </span>
-            <span class="quisuisje-text05">
-              <span>
-                <span>Adresse :</span>
-                <br />
-                <span>1 rue du rouge gorge</span>
-                <br />
-                <span>44260 SAVENAY</span>
-              </span>
-            </span>
-            <span class="quisuisje-text12"><span>Mentions légales</span></span>
-          </div>
-          <div class="quisuisje-group8">
-            <span class="quisuisje-text14">
-              <span>
+<main class="row align-items-center">
+        <div class="col">
+            <div class="container card bg-light p-5">
+                <span>
                 <span>
                   Après une carrière dans le commerce, l'hôtellerie puis la
                   petite enfance, j'ai ressenti le besoin de me reconnecter à
                   moi-même, à mon "moi" profond.
                 </span>
-                <br />
+                <br/>
                 <span>
                   Quelques mois de coaching m'ont permis de retrouver mes
                   piliers sensoriels et émotionnels.
                 </span>
-                <br />
+                <br/>
                 <span></span>
-                <br />
+                <br/>
                 <span>
                   Je me suis alors tournée vers le Reiki, car il m'est apparu
                   comme une évidence.
                 </span>
-                <br />
+                <br/>
                 <span>
                   Ma rencontre avec Fabian Igier (Usui Reiki Ryoho) a confirmé
                   mon souhait d'apporter un regard bienveillant sur le monde, et
                   de vous accompagner sur votre propre chemin.
                 </span>
-                <br />
+                <br/>
                 <span></span>
-                <br />
+                <br/>
                 <span>
                   J'ai passé mes deux niveaux de Reiki, puis me suis formée à
                   l'EFT et aux fleurs de Bach.
                 </span>
-                <br />
+                <br/>
                 <span></span>
-                <br />
+                <br/>
                 <span>
                   J'ai à cœur de vous accompagner dans votre découverte de votre
                   "moi" profond comme je l'ai été moi-même.
                 </span>
-                <br />
+                <br/>
                 <span></span>
-                <br />
+                <br/>
                 <span>Prenez soin de vous.</span>
               </span>
-            </span>
-          </div>
-          <div class="quisuisje-group2">
-            <img
-              src="public/playground_assets/headeri311-6mjq.svg"
-              alt="headerI311"
-              class="quisuisje-header"
-            />
-            <div class="quisuisje-navbarlight">
-              <div class="quisuisje-navigationlink">
-                <span class="quisuisje-text37"><span><a href="index.html">Accueil</a></span></span>
-                <span class="quisuisje-text39"><span><a href="quisuisje.html">Qui suis-je</a></span></span>
-                <span class="quisuisje-text41"><span><a href="activites.html">Activités</a></span></span>
-                <span class="quisuisje-text43"><span><a href="contactezmoi.html">Contactez-moi</a></span></span>
-                <span class="quisuisje-text45"><span><a href="tarifs.html">Tarifs</a></span></span>
-                <span class="quisuisje-text47"><span><a href="livred-or.html">Livre d'or</a></span></span>
-              </div>
             </div>
-            <div class="quisuisje-group5">
-              <img
-                src="public/playground_assets/image400jpgdpilogocropped1i311-7g9j-200h.png"
-                alt="IMAGE400JpgdpiLogoCropped1I311"
-                class="quisuisje-image40-jpgdpi-logo-cropped1"
-              />
-            </div>
-          </div>
         </div>
-      </div>
+    </main>
+
+<footer>
+    <div class="container text-center">
+       <div class="row align-items-center">
+            <div class="col">
+                <p> Téléphone : 06 63 80 86 10 <br/>
+                e-mail : contact@fleurdeserenite.eu</p>
+            </div>
+            <div class="col">
+                <p>Adresse :<br/>
+                1 rue du rouge gorge<br/>
+                44260 SAVENAY</p>
+            </div>
+            <div class="col">
+                <a href="#">Mentions légales</a>
+            </div>
+       </div>
     </div>
-  </body>
+</footer>
+</body>
 </html>

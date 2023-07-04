@@ -60,8 +60,6 @@
 }
 
 .footer-basic, .footer-basic a {
-    position: relative;
-    padding: 40px 0;
     background-color: #ffffff;
     text-decoration: none;
     color: rgba(137, 61, 122, 1);
@@ -95,6 +93,11 @@ main {
 
 .test {
     height: 10vh;
+}
+
+.tarif-card{
+    width: 11rem;
+    height: 11rem;
 }
 
 /*footer p, footer a {*/

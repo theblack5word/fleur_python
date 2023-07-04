@@ -1,13 +1,13 @@
-*{
+* {
     font-size: 1em;
 }
 
-html{
-    margin:0;
-    padding:0;
-    height: 100vh;
-    font-family: Avenir, sans-serif;
-}
+/*html {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    height: 100vh;*/
+/*    font-family: Avenir, sans-serif;*/
+/*}*/
 
 .active_nav_link {
     color: rgba(137, 61, 122, 1);
@@ -18,32 +18,87 @@ html{
     height: 60vh;
 }
 
+.btn-custom:hover, .btn-custom:focus
+{
+    background-color: rgba(137, 61, 122, 1);
+    border-color: rgba(137, 61, 122, 1);
+    color: white;
+}
+
+.card-container {
+    position: relative;
+    height: 450px;
+    width: 300px;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    margin: auto;
+}
+
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+}
+
+.footer-basic, .footer-basic a {
+    position: relative;
+    padding: 40px 0;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: rgba(137, 61, 122, 1);
+    font-weight: bold;
+}
+
+.btn, .btn-outline-primary{
+    color: rgba(137, 61, 122, 1);
+    border-color: rgba(137, 61, 122, 1);
+}
+
 nav ul {
     align-items: center;
     justify-content: space-around;
     /*padding-left:5em;*/
     list-style-type: none;
-    display : flex;
+    display: flex;
     flex-wrap: wrap;
 }
 
-body {
-    margin-top:0;
-    padding-top:0;
-    height: 100%;
-}
+/*body {*/
+/*    margin-top:0;*/
+/*    padding-top:0;*/
+/*    height: 100%;*/
+/*}*/
 
 main {
     background: #B5B2B2;
-    height: 70vh;
+    height: 600px;
 }
 
 .test {
     height: 10vh;
 }
 
-footer p, footer a {
-    text-decoration: none;
-    color: rgba(137, 61, 122, 1);
-    font-weight: bold;
-}
+/*footer p, footer a {*/
+/*    text-decoration: none;*/
+/*    color: rgba(137, 61, 122, 1);*/
+/*    font-weight: bold;*/
+/*}*/

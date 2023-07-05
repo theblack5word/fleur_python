@@ -2,25 +2,25 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.css" rel="stylesheet">
     <title>Projet Structure</title>
 </head>
 <body>
 <header>
     <div class="py-2">
-        <img class="rounded mx-auto d-block" src="medias/img/logo.png" alt="logo du site, une fleur de lotus">
+        <img alt="logo du site, une fleur de lotus" class="rounded mx-auto d-block" src="medias/img/logo.png">
     </div>
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container">
                 <a class="navbar-brand d-none d-md-block d-lg-none active_nav_link" href="#">Menu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                        data-bs-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,64 +53,170 @@
 </header>
 
 <main>
-    <div class="container-fluid row p-5">
-        <div class="card rounded-circle tarif-card col-1 offset-1">
-            <div class="card-body text-center">
-                <p></p>
-                <h5 class="card-title">Découverte</h5>
-                <p class="card-text">1ère séance d'1h</p>
-                <h6 class="card-subtitle mb-2 text-body-secondary">25 €</h6>
+    <div class="container-fluid pt-5 d-block d-lg-none">
+        <div class="row justify-content-center gy-2">
+            <div class="col ">
+                <div class="card rounded-circle tarif-card m-auto">
+                    <a data-bs-target="#decouverte_modal" data-bs-toggle="modal">
+                        <div class="card-body text-center">
+                            <p></p>
+                            <h5 class="card-title">Découverte</h5>
+                            <p class="card-text">1ère séance d’1h (détail)</p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">25 €</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card rounded-circle tarif-card m-auto">
+                    <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                        <div class="card-body text-center">
+                            <p></p>
+                            <h5 class="card-title">Classique</h5>
+                            <p class="card-text">séance d'1h (détail)</p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card rounded-circle tarif-card m-auto">
+                    <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                        <div class="card-body text-center">
+                            <p></p>
+                            <h5 class="card-title">Classique</h5>
+                            <p class="card-text">séance d'1h (détail)</p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card rounded-circle tarif-card m-auto">
+                    <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                        <div class="card-body text-center">
+                            <p></p>
+                            <h5 class="card-title">Classique</h5>
+                            <p class="card-text">séance d'1h (détail)</p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="card rounded-circle tarif-card col-1 offset-6">
-            <div class="card-body text-center">
-                <p></p>
-                <h5 class="card-title">Classique</h5>
-                <p class="card-text">séance d'1h</p>
-                <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+    </div>
+    <div class="container-fluid  pt-5 d-none d-lg-block">
+        <div class="row align-items-center m-auto">
+            <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-3">
+                <a data-bs-target="#decouverte_modal" data-bs-toggle="modal">
+                    <div class="card-body text-center">
+                        <p></p>
+                        <h5 class="card-title">Découverte</h5>
+                        <p class="card-text">1ère séance d’1h (détail)</p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">25 €</h6>
+                    </div>
+                </a>
             </div>
-        </div>
-        <div class="card rounded-circle tarif-card col-1 offset-2">
-            <div class="card-body text-center">
-                <p></p>
-                <h5 class="card-title">Animale</h5>
-                <p class="card-text">de 10 à 20 min</p>
-                <h6 class="card-subtitle mb-2 text-body-secondary">20 €</h6>
+            <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-2 offset-lg-2">
+                <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                    <div class="card-body text-center">
+                        <p></p>
+                        <h5 class="card-title">Classique</h5>
+                        <p class="card-text">séance d'1h (détail)</p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                    </div>
+                </a>
             </div>
-        </div>
-        <div class="card rounded-circle tarif-card col-1 offset-4">
-            <a data-bs-toggle="modal" data-bs-target="#carte_cadeau_modal">
-            <div class="card-body text-center">
-                <p></p>
-                <h5 class="card-title">Carte cadeau</h5>
-                <p class="card-text">tarif <br> personnalisable </p>
+            <div class="col-lg-2 "></div>
+            <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-3 offset-lg-2">
+                <a data-bs-target="#animal_modal" data-bs-toggle="modal">
+                    <div class="card-body text-center">
+                        <p></p>
+                        <h5 class="card-title">Animal</h5>
+                        <p class="card-text">de 10 à 20 min (détail) </p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">20 € </h6>
+                    </div>
+                </a>
             </div>
-            </a>
+            <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-4">
+                <a data-bs-target="#carte_cadeau_modal" data-bs-toggle="modal">
+                    <div class="card-body text-center">
+                        <p></p>
+                        <br>
+                        <h5 class="card-title">Carte </h5>
+                        <h5 class="card-title">cadeau </h5>
+                        <p>(détail)</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
-<!-- Modal -->
-<div class="modal fade" id="carte_cadeau_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Carte cadeau</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Vous pouvez offrir un bon cadeau d'une valeur de votre choix qui pourra servir une ou plusieurs fois selon la situation</p>
-      </div>
+    <!-- Modal -->
+    <div aria-hidden="true" aria-labelledby="carte_cadeau_modal_Label" class="modal fade" id="carte_cadeau_modal"
+         tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="carte_cadeau_modal_Label">Carte cadeau</h1>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Vous pouvez offrir un bon cadeau d'une valeur de votre choix </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <div aria-hidden="true" aria-labelledby="classic_modal_Label" class="modal fade" id="classic_modal"
+         tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="classic_modal_Label">Carte cadeau</h1>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Vous pouvez offrir un bon cadeau d'une valeur de votre choix </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="decouverte_modal_Label" class="modal fade" id="decouverte_modal"
+         tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="decouverte_modal_Label">Carte cadeau</h1>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Vous pouvez offrir un bon cadeau d’une valeur de votre choix </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="animal_modal_Label" class="modal fade" id="animal_modal"
+         tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="animal_modal_Label">Carte cadeau</h1>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Vous pouvez offrir un bon cadeau d’une valeur de votre choix </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer class="footer-basic">
     <div class="container text-center">
         <div class="row align-items-center">
             <div class="col">
-                <p> Téléphone : 06 63 80 86 10 <br/>
-                    e-mail : contact@fleurdeserenite.eu</p>
+                <p> Téléphone: 06 63 80 86 10 <br/>
+                    e-mail: contact@fleurdeserenite.eu</p>
             </div>
             <div class="col">
                 <p>Adresse :<br/>

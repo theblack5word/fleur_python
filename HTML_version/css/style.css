@@ -89,6 +89,7 @@ nav ul {
 main {
     background: #B5B2B2;
     height: 600px;
+    overflow-x:scroll
 }
 
 .test {
@@ -100,6 +101,9 @@ main {
     height: 11rem;
 }
 
+.modal {
+   margin-top: 200px;
+}
 /*footer p, footer a {*/
 /*    text-decoration: none;*/
 /*    color: rgba(137, 61, 122, 1);*/

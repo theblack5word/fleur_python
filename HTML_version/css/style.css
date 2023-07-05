@@ -92,6 +92,10 @@ main {
     overflow-x:scroll
 }
 
+.contact_form {
+    background: #D9D9D9;
+}
+
 .test {
     height: 10vh;
 }

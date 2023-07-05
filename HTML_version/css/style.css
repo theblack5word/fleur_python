@@ -8,17 +8,22 @@
 /*    height: 100vh;*/
 /*    font-family: Avenir, sans-serif;*/
 /*}*/
-
+h1, h5, .card-title{
+    color: rgba(137, 61, 122, 1);
+}
 .active_nav_link {
     color: rgba(137, 61, 122, 1);
     font-weight: bold;
 }
 
+.message_contact{
+    height: 100px;
+}
 .presentation_Tiffany {
     height: 60vh;
 }
 
-.btn-custom:hover, .btn-custom:focus
+.btn-custom:hover, .btn-custom:focus, .btn-custom::selection
 {
     background-color: rgba(137, 61, 122, 1);
     border-color: rgba(137, 61, 122, 1);

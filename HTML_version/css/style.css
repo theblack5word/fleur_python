@@ -2,12 +2,10 @@
     font-size: 1em;
 }
 
-/*html {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    height: 100vh;*/
-/*    font-family: Avenir, sans-serif;*/
-/*}*/
+img {
+    max-width: 100%;
+}
+
 h1, h5, .card-title{
     color: rgba(137, 61, 122, 1);
 }
@@ -84,17 +82,10 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
 }
-
-/*body {*/
-/*    margin-top:0;*/
-/*    padding-top:0;*/
-/*    height: 100%;*/
-/*}*/
-
 main {
     background: #B5B2B2;
     height: 600px;
-    overflow-x:scroll
+    /*overflow-y:scroll*/
 }
 
 .contact_form {
@@ -113,8 +104,3 @@ main {
 .modal {
    margin-top: 200px;
 }
-/*footer p, footer a {*/
-/*    text-decoration: none;*/
-/*    color: rgba(137, 61, 122, 1);*/
-/*    font-weight: bold;*/
-/*}*/

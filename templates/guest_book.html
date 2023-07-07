@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="/comment/" method="post">
+{% include 'components/header.html' %}
+
+<main class="row align-items-center">
+<form action="/add_comment/" method="post">
     <div>
         <label for="name">Votre nom : </label>
         <input type="text" name="name" id="name" required>
@@ -24,5 +20,7 @@
 
     </div>
 </form>
-</body>
-</html>
+
+
+</main>
+{% include 'components/footer.html' %}

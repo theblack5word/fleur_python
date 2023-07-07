@@ -44,15 +44,83 @@
                             <a class="nav-link active_nav_link" href="livred-or.html">Livre d'or</a>
                         </li>
                     </ul>
-
-
                 </div>
             </div>
         </nav>
     </div>
 </header>
 
-<main>
+<main class="overflow-auto">
+    <div class="container-fluid h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class=" col-4 h-100 p-3">
+                <div class="rounded-5 contact_form h-100 p-3">
+                    <h5> Je vous invite à laisser un message afin de partager votre expérience</h5>
+                    <form action="/comment/" class="mt-3" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Votre nom : </label>
+                            <input type="text" name="name" id="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="visiteDate" class="form-label"> Date de votre soin : </label>
+                            <input type="date" name="visitDate" class="form-control" id="visiteDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label"> Votre message : </label>
+                            <br>
+                            <textarea name="comment" class="form-control message_contact" id="comment" cols="50"
+                                      rows="10"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-custom" type="submit">Envoi du commentaire</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 h-100 p-3 ">
+                <div class="rounded-5 contact_form h-100 p-3 text-center overflow-auto">
+                    <h5> les derniers commentaires</h5>
+                    <div class="card text-start">
+                        <div class="card-body">
+                            <p class="card-text fw-bold fleur_color">Message de Céline</p>
+                            <p class="card-text">Fleur de sérénité m'a fait découvrir le Reiki, avec douceur et
+                                bienveillance. Elle nous accueille, nous écoute et s'adapte à notre demande. Une séance
+                                de Reiki, je le vois un peu comme un nettoyage, comme prendre une douche mais sans eau
+                                ni savon. Une douche énergétique pour enlever les nœuds, se nettoyer et ainsi pouvoir
+                                se laisser recharger. A essayer !</p>
+                            <p class="card-text"><small class="text-body-secondary">séance en Février</small></p>
+                        </div>
+                    </div>
+                    <div class="card mb-2 text-end">
+                        <div class="card-body">
+                            <p class="card-text fw-bold fleur_color">Réponse de Tiffany</p>
+                            <p class="card-text">Merci beaucoup. Cela a été un plaisir partagé. A bientôt!</p>
+                        </div>
+                    </div>
+                    <div class="card text-start">
+                        <div class="card-body">
+                            <p class="card-text fw-bold fleur_color">Message de Jean-Claude</p>
+                            <p class="card-text">Un peu hésitant par rapport à cette pratique que je ne connaissais pas,
+                                j'ai eu recours aux bons soins de madame Bonnand suite à une vilaine sciatique qui ne
+                                voulait pas partir. La séance a été très délicate et très agréable. Au bout de 3 jours,
+                                plus rien ! Ces techniques asiatiques sont vraiment sensationnelles. Je recommande.</p>
+                            <p class="card-text"><small class="text-body-secondary">séance en Mai</small></p>
+                        </div>
+                    </div>
+                    <div class="card mb-2 text-end">
+                        <div class="card-body">
+                            <p class="card-text fw-bold fleur_color">Réponse de Tiffany</p>
+                            <p class="card-text">Je suis contente de savoir que vous allez mieux. Au plaisir de vous
+                                recevoir à nouveau. </p>
+                        </div>
+                    </div>
+                    <a href="#" class="fleur_color">Voir plus ...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </main>
 
@@ -76,3 +144,4 @@
 </footer>
 </body>
 </html>
+

@@ -5,8 +5,9 @@ from flask import (
     Flask,
     g,
     render_template,
-    request,
+    request, redirect,
 )
+from mpmath import fib
 
 app = Flask(__name__)
 
@@ -29,10 +30,27 @@ def close_connection(exception):
 
 
 def query_db(query, *args):
-    cur = get_db().execute(query, args)
-    rows = cur.fetchall()
+    db = get_db()
+    cur = db.execute(query, args)
+    if query.lower().startswith('select '):
+        rows = cur.fetchall()
+    else:
+        db.commit()
+        rows = []
     cur.close()
     return rows
+
+
+def verif_and_add_table():
+    """check if comments table exist, and create it if no exist."""
+    query_db("""
+            CREATE TABLE IF NOT EXISTS comments(
+                id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
+                name VARCHAR(100),
+                visitDate DATE,
+                comment VARCHAR(500)
+            );
+        """)
 
 
 @app.route("/")
@@ -40,49 +58,31 @@ def go_home():
     return render_template('index.html')
 
 
-@app.route("/add_comment")
-def hello_world():
+@app.route("/guest_book")
+def add_guest_book():
     recent_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-    return render_template('newComment.html', comments=recent_comments)
+    return render_template('guest_book.html', comments=recent_comments)
 
 
-#
-#
-# @app.route('/hello/')
-# @app.route('/hello/<name>')
-# def hello(name=None):
-#     return render_template('hello.html', name=name)
-
-
-@app.route('/comment/', methods=["POST"])
+@app.route('/add_comment/', methods=["POST"])
 def comment():
-    query_db("""
-        CREATE TABLE IF NOT EXISTS comments(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
-            name VARCHAR(100),
-            visitDate DATE,
-            comment VARCHAR(500)
-        );
-    """)
+    verif_and_add_table()
     query_db("INSERT INTO comments VALUES(NULL,?,?,?)",
              request.form['name'],
              request.form['visitDate'],
              request.form['comment'],
              )
-    # con.commit()
-    return str('données enregistrées')
+    return redirect('/guest_book')
 
 
-@app.route('/comments/')
+@app.route('/show_comments/')
 def comments():
+    verif_and_add_table()
     all_comments = query_db("SELECT name, visitDate, comment FROM comments")
-    # for comment in comments:
-    #    return str((comment['name'], comment['visitDate'], comment['comment']))
     return render_template('view_comments.html', comments=all_comments)
 
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    # app.run(debug=True, host='0.0.0.0')
     app.run(debug=True, host='127.0.0.1')

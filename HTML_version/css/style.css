@@ -9,6 +9,11 @@ img {
 h1, h5, .card-title{
     color: rgba(137, 61, 122, 1);
 }
+
+.fleur_color {
+     color: rgba(137, 61, 122, 1);
+}
+
 .active_nav_link {
     color: rgba(137, 61, 122, 1);
     font-weight: bold;

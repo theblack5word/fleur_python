@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
+import datetime
+import locale
 import sqlite3
+
 
 from flask import (
     Flask,
@@ -7,7 +10,6 @@ from flask import (
     render_template,
     request, redirect,
 )
-from mpmath import fib
 
 app = Flask(__name__)
 
@@ -41,16 +43,18 @@ def query_db(query, *args):
     return rows
 
 
-def verif_and_add_table():
-    """check if comments table exist, and create it if no exist."""
+def init():
+    locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
     query_db("""
             CREATE TABLE IF NOT EXISTS comments(
                 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
                 name VARCHAR(100),
-                visitDate DATE,
-                comment VARCHAR(500)
+                visit_date DATE,
+                comment VARCHAR(500),
+                response VARCHAR(500)
             );
         """)
+    print('init execute')
 
 
 @app.route("/")
@@ -58,18 +62,24 @@ def go_home():
     return render_template('index.html')
 
 
-@app.route("/guest_book")
+@app.route("/guest_book/")
 def add_guest_book():
-    recent_comments = query_db("SELECT name, visitDate, comment FROM comments LIMIT 4")
-    return render_template('guest_book.html', comments=recent_comments)
+    recent_comments = query_db("SELECT name, visit_date, comment FROM comments ORDER BY visit_date DESC")
+    return render_template('guest_book.html', recent_comments=[
+        {
+            "name": row["name"],
+            "visit_date": datetime.datetime.strptime(row["visit_date"], "%Y-%m-%d").strftime("%B %Y"),
+            "comment": row["comment"],
+        }
+        for row in recent_comments
+    ])
 
 
 @app.route('/add_comment/', methods=["POST"])
 def comment():
-    verif_and_add_table()
-    query_db("INSERT INTO comments VALUES(NULL,?,?,?)",
+    query_db("INSERT INTO comments (name, visit_date, comment) VALUES(?,?,?)",
              request.form['name'],
-             request.form['visitDate'],
+             request.form['visit_date'],
              request.form['comment'],
              )
     return redirect('/guest_book')
@@ -77,10 +87,12 @@ def comment():
 
 @app.route('/show_comments/')
 def comments():
-    verif_and_add_table()
-    all_comments = query_db("SELECT name, visitDate, comment FROM comments")
-    return render_template('view_comments.html', comments=all_comments)
+    all_comments = query_db("SELECT name, visit_date, comment FROM comments")
+    return render_template('view_comments.html', all_comments=all_comments)
 
+
+with app.app_context():
+    init()
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True

@@ -8,10 +8,10 @@
                 </tr>
             </thead>
             <tbody>
-                {% for comment in comments %}
+                {% for comment in all_comments %}
                 <tr>
                     <td>{{ comment.name }}</td>
-                    <td>{{ comment.visitDate | default("pas de date")}}</td>
+                    <td>{{ comment.visit_date | default("pas de date")}}</td>
                     <td>{{ comment.comment }}</td>
                 </tr>
                 {% endfor %}

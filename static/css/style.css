@@ -1,12 +1,17 @@
-*{
+* {
     font-size: 1em;
 }
 
-html{
-    margin:0;
-    padding:0;
-    height: 100vh;
-    font-family: Avenir, sans-serif;
+img {
+    max-width: 100%;
+}
+
+h1, h5, .card-title{
+    color: rgba(137, 61, 122, 1);
+}
+
+.fleur_color {
+     color: rgba(137, 61, 122, 1);
 }
 
 .active_nav_link {
@@ -14,27 +19,93 @@ html{
     font-weight: bold;
 }
 
-nav ul {
-    align-items: center;
-    justify-content: space-around;
-    list-style-type: none;
-    display : flex;
-    flex-wrap: wrap;
+.message_contact{
+    height: 100px;
+}
+.presentation_Tiffany {
+    height: 60vh;
 }
 
-body {
-    margin-top:0;
-    padding-top:0;
+.btn-custom:hover, .btn-custom:focus, .btn-custom::selection
+{
+    background-color: rgba(137, 61, 122, 1);
+    border-color: rgba(137, 61, 122, 1);
+    color: white;
+}
+
+.card-container {
+    position: relative;
+    height: 450px;
+    width: 300px;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card2 {
+    position: absolute;
     height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
 }
 
-main {
-    background: #B5B2B2;
-    height: 70vh;
+.card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    margin: auto;
 }
 
-footer p, footer a {
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+}
+
+.footer-basic, .footer-basic a {
+    background-color: #ffffff;
     text-decoration: none;
     color: rgba(137, 61, 122, 1);
     font-weight: bold;
+}
+
+.btn, .btn-outline-primary{
+    color: rgba(137, 61, 122, 1);
+    border-color: rgba(137, 61, 122, 1);
+}
+
+nav ul {
+    align-items: center;
+    justify-content: space-around;
+    /*padding-left:5em;*/
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+main {
+    background: #B5B2B2;
+    height: 600px;
+    /*overflow-y:scroll*/
+}
+
+.contact_form {
+    background: #D9D9D9;
+}
+
+.test {
+    height: 10vh;
+}
+
+.tarif-card{
+    width: 11rem;
+    height: 11rem;
+}
+
+.modal {
+   margin-top: 200px;
 }

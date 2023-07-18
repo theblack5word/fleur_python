@@ -1,57 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <title>Projet Structure</title>
-</head>
-<body>
-    <header>
-        <div class="py-2">
-            <img class="rounded mx-auto d-block" src="medias/img/logo.png" alt="logo du site, une fleur de lotus">
-        </div>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-white">
-                <div class="container">
-                    <a class="navbar-brand d-none d-md-block d-lg-none active_nav_link" href="#">Menu</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="container navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active_nav_link href=index.html">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="quisuisje.html">Qui suis-je</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="activites.html">Activités</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contactezmoi.html">Contactez-moi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tarifs.html">Tarifs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="guest_book.html">Livre d'or</a>
-                            </li>
-                        </ul>
-
-
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-
+{% include 'components/header.html' %}
     <main class="row align-items-center">
         <div class="col">
             <div class="container">
@@ -101,23 +48,4 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container text-center">
-            <div class="row align-items-center">
-                <div class="col">
-                    <p> Téléphone : 06 63 80 86 10 <br/>
-                        e-mail : contact@fleurdeserenite.eu</p>
-                </div>
-                <div class="col">
-                    <p>Adresse :<br/>
-                        1 rue du rouge gorge<br/>
-                        44260 SAVENAY</p>
-                </div>
-                <div class="col">
-                    <a href="#">Mentions légales</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{% include 'components/footer.html' %}

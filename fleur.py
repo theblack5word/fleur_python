@@ -2,6 +2,7 @@
 import datetime
 import locale
 import sqlite3
+import json
 
 
 from flask import (
@@ -93,7 +94,10 @@ def comments():
 
 @app.route('/contact/')
 def contact():
-    return render_template('contactezmoi.html')
+    with open('static/opening_hours.json', 'r') as hours:
+        data = json.load(hours)
+    print(data)
+    return render_template('contactezmoi.html', opening_hours=data)
 
 
 @app.route('/who_i_am/')

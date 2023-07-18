@@ -21,13 +21,11 @@
                             <label for="name" class="form-label">Votre nom</label>
                             <input type="text" class="form-control" id="name">
                         </div>
-
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label ">Votre message</label>
                             <textarea class="form-control message_contact" id="exampleFormControlTextarea1"
                                 rows="3"></textarea>
                         </div>
-
                         <div class="col-12">
                             <button class="btn  btn-custom" type="submit">Envoyer</button>
                         </div>
@@ -38,9 +36,10 @@
                 <div class="rounded-5 contact_form h-100 p-3 text-center ">
                     <h5> Les horaires</h5>
                     {% for open in opening_hours %}
+                        <p> {{ open.day }} 
                         {% for hour in open.hour%}
-                            <p> {{ hour}} </p>
-                        {% endfor %}
+                            {{ hour}} 
+                        {% endfor %}</p>
                     {% endfor %}
                 </div>
             </div>
@@ -51,5 +50,3 @@
 
 
 {% include 'components/footer.html' %}
-
-{% set opening_hours = ['lundi','09:00 - 19:30','mardi','13:30 - 19:30', 'mercredi', 'FERMÉ'  ]%}

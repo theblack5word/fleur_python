@@ -78,10 +78,10 @@ def add_guest_book():
 @app.route('/add_comment/', methods=["POST"])
 def comment():
     query_db("INSERT INTO comments (name, visit_date, comment) VALUES(?,?,?)",
-             request.form['name'],
-             request.form['visit_date'],
-             request.form['comment'],
-             )
+            request.form['name'],
+            request.form['visit_date'],
+            request.form['comment'],
+            )
     return redirect('/guest_book')
 
 
@@ -91,6 +91,26 @@ def comments():
     return render_template('view_comments.html', all_comments=all_comments)
 
 
+@app.route('/contact/')
+def contact():
+    return render_template('contactezmoi.html')
+
+
+@app.route('/who_i_am/')
+def who_i_am():
+    return render_template('who_i_am.html')
+
+
+@app.route('/activities/')
+def activities():
+    return render_template('activities.html')
+
+
+@app.route('/prices/')
+def prices():
+    return render_template('prices.html')
+
+
 with app.app_context():
     init()
 
@@ -98,3 +118,5 @@ if __name__ == '__main__':
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(debug=True, host='127.0.0.1')
+
+

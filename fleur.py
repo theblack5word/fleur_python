@@ -4,7 +4,6 @@ import locale
 import sqlite3
 import json
 
-
 from flask import (
     Flask,
     g,
@@ -79,10 +78,10 @@ def add_guest_book():
 @app.route('/add_comment/', methods=["POST"])
 def comment():
     query_db("INSERT INTO comments (name, visit_date, comment) VALUES(?,?,?)",
-            request.form['name'],
-            request.form['visit_date'],
-            request.form['comment'],
-            )
+             request.form['name'],
+             request.form['visit_date'],
+             request.form['comment'],
+             )
     return redirect('/guest_book')
 
 
@@ -122,5 +121,3 @@ if __name__ == '__main__':
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(debug=True, host='127.0.0.1')
-
-

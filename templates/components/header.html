@@ -30,23 +30,26 @@
                                href="/">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if (request.url == 'http://127.0.0.1:5000/who_i_am/' ) %}active_nav_link {% endif %}"
+                            <a class="nav-link {% if (request.url.endswith('who_i_am/')) %}active_nav_link {% endif %}"
                                href="/who_i_am">Qui suis-je</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link {% if (request.url == 'http://127.0.0.1:5000/activities/' ) %}active_nav_link {% endif %}" href="/activities">Activités</a>
+                        <li class="nav-item"><a
+                                class="nav-link {% if (request.url.endswith('activities/') ) %}active_nav_link {% endif %}"
+                                href="/activities">Activités</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if (request.url == 'http://127.0.0.1:5000/contact/' ) %}active_nav_link {% endif %}" href="/contact">Contactez-moi</a>
+                            <a class="nav-link {% if (request.url.endswith('contact/') ) %}active_nav_link {% endif %}"
+                               href="/contact">Contactez-moi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if (request.url == 'http://127.0.0.1:5000/prices/' ) %}active_nav_link {% endif %}" href="/prices">Tarifs</a>
+                            <a class="nav-link {% if (request.url.endswith('prices/') ) %}active_nav_link {% endif %}"
+                               href="/prices">Tarifs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if (request.url == 'http://127.0.0.1:5000/guest_book/' ) %}active_nav_link {% endif %}" href="/guest_book">Livre d'or</a>
+                            <a class="nav-link {% if (request.url.endswith('guest_book/') ) %}active_nav_link {% endif %}"
+                               href="/guest_book">Livre d'or</a>
                         </li>
                     </ul>
-
-
                 </div>
             </div>
         </nav>

@@ -56,8 +56,12 @@ def init():
         """)
     print('init execute')
 
-
 @app.route("/")
+def redirect_home():
+    return redirect('/home')
+
+
+@app.route("/home/")
 def go_home():
     return render_template('index.html')
 

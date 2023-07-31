@@ -56,6 +56,7 @@ def init():
         """)
     print('init execute')
 
+
 @app.route("/")
 def redirect_home():
     return redirect('/home')
@@ -115,7 +116,9 @@ def activities():
 
 @app.route('/prices/')
 def prices():
-    return render_template('prices.html')
+    with open('static/prices.json', 'r') as prices_json:
+        data = json.load(prices_json)
+    return render_template('prices.html', prices=data)
 
 
 with app.app_context():

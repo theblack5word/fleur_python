@@ -1,157 +1,168 @@
 {% include 'components/header.html' %}
 <main>
+    <!--affichage des box pour mobile -->
     <div class="container-fluid pt-5 d-block d-lg-none">
         <div class="row justify-content-center gy-2">
             <div class="col ">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#decouverte_modal" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
-                            <h5 class="card-title">Découverte</h5>
-                            <p class="card-text">1ère séance d’1h (détail)</p>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">25 €</h6>
+                            <h5 class="card-title">{{ prices[0].content.title }}</h5>
+                            <p class="card-text">(détail)</p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[0].content.price }}</h6>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[1].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
-                            <h5 class="card-title">Classique</h5>
-                            <p class="card-text">séance d'1h (détail)</p>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                            <h5 class="card-title">{{ prices[1].content.title }}</h5>
+                            <p></p>
+                            <p class="card-text">{{ prices[1].content.detail }} </p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[1].content.price }}</h6>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[1].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
-                            <h5 class="card-title">Classique</h5>
-                            <p class="card-text">séance d'1h (détail)</p>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                            <h5 class="card-title">{{ prices[2].content.title }}</h5>
+                            <p></p>
+                            <p class="card-text">{{ prices[2].content.detail }}</p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[2].content.price }}</h6>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[1].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
-                            <h5 class="card-title">Classique</h5>
-                            <p class="card-text">séance d'1h (détail)</p>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                            <h5 class="card-title">{{ prices[3].content.title }}</h5>
+                            <p></p>
+                            <p class="card-text">{{ prices[3].content.detail }} </p>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[3].content.price }}</h6>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--affichage des box pour desktop -->
+
     <div class="container-fluid  pt-5 d-none d-lg-block">
         <div class="row align-items-center m-auto">
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-3">
-                <a data-bs-target="#decouverte_modal" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
-                        <h5 class="card-title">Découverte</h5>
-                        <p class="card-text">1ère séance d’1h (détail)</p>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">25 €</h6>
+                        <h5 class="card-title">{{ prices[0].content.title }}</h5>
+                        <p class="card-text">(détail)</p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[0].content.price }}</h6>
                     </div>
                 </a>
             </div>
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-2 offset-lg-2">
-                <a data-bs-target="#classic_modal" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[1].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
-                        <h5 class="card-title">Classique</h5>
-                        <p class="card-text">séance d'1h (détail)</p>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">50 €</h6>
+                        <h5 class="card-title">{{ prices[1].content.title }}</h5>
+                        <p class="card-text">{{ prices[1].content.detail }} </p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[1].content.price }}</h6>
                     </div>
                 </a>
             </div>
             <div class="col-lg-2 "></div>
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-3 offset-lg-2">
-                <a data-bs-target="#animal_modal" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[3].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
-                        <h5 class="card-title">Animal</h5>
-                        <p class="card-text">de 10 à 20 min (détail) </p>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">20 € </h6>
+                        <h5 class="card-title">{{ prices[2].content.title }}</h5>
+                        <p class="card-text">{{ prices[2].content.detail }}</p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[2].content.price }}</h6>
                     </div>
                 </a>
             </div>
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-4">
-                <a data-bs-target="#carte_cadeau_modal" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[0].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
-                        <br>
-                        <h5 class="card-title">Carte </h5>
-                        <h5 class="card-title">cadeau </h5>
-                        <p>(détail)</p>
+                        <h5 class="card-title">{{ prices[3].content.title }}</h5>
+                        <p class="card-text">{{ prices[3].content.detail }} </p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[3].content.price }}</h6>
                     </div>
                 </a>
             </div>
         </div>
     </div>
 
+
+
+
+    </div> 
+
     <!-- Modal -->
-    <div aria-hidden="true" aria-labelledby="carte_cadeau_modal_Label" class="modal fade" id="carte_cadeau_modal"
-        tabindex="-1">
+    <div aria-hidden="true" aria-labelledby="{{prices[0].name}}_modal_Label" class="modal fade" id="{{prices[0].name}}_modal_Label"
+         tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="carte_cadeau_modal_Label">Carte cadeau</h1>
+                    <h1 class="modal-title fs-5" id="{{prices[0].name}}_modal_Label">Carte cadeau</h1>
                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Vous pouvez offrir un bon cadeau d'une valeur de votre choix </p>
+                    <p>{{prices[0].content.info}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div aria-hidden="true" aria-labelledby="classic_modal_Label" class="modal fade" id="classic_modal"
-        tabindex="-1">
+    <div aria-hidden="true" aria-labelledby="{{prices[1].name}}_modal_Label" class="modal fade" id="{{prices[1].name}}_modal_Label"
+         tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="classic_modal_Label">Carte cadeau</h1>
+                    <h1 class="modal-title fs-5" id="{{prices[1].name}}_modal_Label">Carte cadeau</h1>
                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Vous pouvez offrir un bon cadeau d'une valeur de votre choix </p>
+                    <p>{{prices[1].content.info}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div aria-hidden="true" aria-labelledby="decouverte_modal_Label" class="modal fade" id="decouverte_modal"
-        tabindex="-1">
+    <div aria-hidden="true" aria-labelledby="{{prices[2].name}}_modal_Label" class="modal fade" id="{{prices[2].name}}_modal_Label"
+         tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="decouverte_modal_Label">Carte cadeau</h1>
+                    <h1 class="modal-title fs-5" id="{{prices[2].name}}_modal_Label">Carte cadeau</h1>
                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Vous pouvez offrir un bon cadeau d’une valeur de votre choix </p>
+                    <p>{{prices[2].content.info}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div aria-hidden="true" aria-labelledby="animal_modal_Label" class="modal fade" id="animal_modal"
-        tabindex="-1">
+    <div aria-hidden="true" aria-labelledby="{{prices[3].name}}_modal_Label" class="modal fade" id="{{prices[3].name}}_modal_Label"
+         tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="animal_modal_Label">Carte cadeau</h1>
+                    <h1 class="modal-title fs-5" id="{{prices[3].name}}_modal_Label">Carte cadeau</h1>
                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Vous pouvez offrir un bon cadeau d’une valeur de votre choix </p>
+                    <p>{{prices[3].content.info}}</p>
                 </div>
             </div>
         </div>

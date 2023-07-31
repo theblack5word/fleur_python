@@ -1,0 +1,30 @@
+[
+    {
+      "name" : "carte_cadeau" , "content" : {
+      "title": "carte cadeau",
+      "price": "",
+      "detail": "blablabla",
+      "info": ""}
+    },
+    {
+      "name" : "animal" , "content" : {
+        "title": "animal",
+        "price": 25,
+        "detail": "(détail) animal",
+        "info": "de 10 à 20 min"}
+    },
+    {
+      "name" : "decouverte" , "content" : {
+        "title": "découverte",
+        "price": 25,
+        "detail": "(détail) decouverte",
+        "info": "1ère séance, 1h"}
+    },
+    {
+      "name" : "classique" , "content" : {
+        "title": "classique",
+        "price": 50,
+        "detail": "detail classique",
+        "info": "séance d 1h"}
+    }
+]

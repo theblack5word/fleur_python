@@ -4,6 +4,11 @@ import locale
 import sqlite3
 import json
 
+from flask_wtf import Form
+from wtforms import BooleanField, PasswordField, SubmitField, TextField
+from wtforms.validators import DataRequired, Email, EqualTo, Length
+from wtforms import ValidationError
+from flask_login import LoginManager
 from flask import (
     Flask,
     g,
@@ -11,11 +16,42 @@ from flask import (
     request, redirect,
 )
 
+
+
+login_manager = LoginManager()
+
 app = Flask(__name__)
+login_manager.init_app(app)
+
 
 DATABASE = 'guestBook.db'
 
 
+class LoginForm(Form):
+    email = TextField('Email',
+            validators=[DataRequired(), Length(1, 64), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember_me = BooleanField('Keep me logged in')
+    submit = SubmitField('Log In')
+
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+
+    def validate(self):
+        initial_validation = super(LoginForm, self).validate()
+        if not initial_validation:
+            return False
+        # user = User.query.filter_by(email=self.email.data).first()
+        user = None
+        if not user:
+            self.email.errors.append('Unknown email')
+            return False
+        if not user.verify_password(self.password.data):
+            self.password.errors.append('Invalid password')
+            return False
+        return True
+    
+    
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
@@ -55,6 +91,31 @@ def init():
             );
         """)
     print('init execute')
+
+
+@app.route('/login', methods=['POST'])
+def login():
+    # Here we use a class of some kind to represent and validate our
+    # client-side form data. For example, WTForms is a library that will
+    # handle this for us, and we use a custom LoginForm to validate.
+    form = LoginForm()
+    # if form.validate_on_submit():
+    #     # Login and validate the user.
+    #     # user should be an instance of your `User` class
+    #     login_user(user)
+
+    #     flask.flash('Logged in successfully.')
+
+    #     next = flask.request.args.get('next')
+    #     # url_has_allowed_host_and_scheme should check if the url is safe
+    #     # for redirects, meaning it matches the request host.
+    #     # See Django's url_has_allowed_host_and_scheme for an example.
+    #     if not url_has_allowed_host_and_scheme(next, request.host):
+    #         return flask.abort(400)
+
+    #     return flask.redirect(next or flask.url_for('index'))
+    print(request)
+    return flask.render_template('login.html', form=form)
 
 
 @app.route("/")

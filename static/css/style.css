@@ -2,10 +2,10 @@
     font-size: 1em;
 }
 
-img {
-    max-width: 100%;
+.img-who {
+    object-fit: contain;
+    height: 500px;
 }
-
 h1, h5, .card-title{
     color: rgba(137, 61, 122, 1);
 }

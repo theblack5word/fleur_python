@@ -1,7 +1,8 @@
 {% include 'components/header.html' %}
+
 <main>
     <!--affichage des box pour mobile -->
-    <div class="container-fluid pt-5 d-block d-lg-none">
+    <div class="container-fluid pt-5 d-block d-lg-none bg_prices h-100">
         <div class="row justify-content-center gy-2">
             <div class="col ">
                 <div class="card rounded-circle tarif-card m-auto">
@@ -59,8 +60,8 @@
 
     <!--affichage des box pour desktop -->
 
-    <div class="container-fluid  pt-5 d-none d-lg-block">
-        <div class="row align-items-center m-auto">
+    <div class="container-fluid  pt-5 d-none d-lg-block bg_prices h-100">
+        <div class="row align-items-center m-auto ">
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-3">
                 <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
@@ -103,6 +104,7 @@
                 </a>
             </div>
         </div>
+
     </div>
 
 

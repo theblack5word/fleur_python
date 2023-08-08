@@ -2,16 +2,33 @@
     font-size: 1em;
 }
 
-img {
-    max-width: 100%;
+nav ul {
+    align-items: center;
+    justify-content: space-around;
+    /*padding-left:5em;*/
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+main {
+    background: #B5B2B2;
+    height: 600px;
+    overflow-y:scroll
+}
+
+
+
+.img-who {
+    object-fit: contain;
+    height: 500px;
+}
 h1, h5, .card-title{
     color: rgba(137, 61, 122, 1);
 }
 
 .fleur_color {
-     color: rgba(137, 61, 122, 1);
+    color: rgba(137, 61, 122, 1);
 }
 
 .active_nav_link {
@@ -80,19 +97,6 @@ h1, h5, .card-title{
 }
 
 
-nav ul {
-    align-items: center;
-    justify-content: space-around;
-    /*padding-left:5em;*/
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-}
-main {
-    background: #B5B2B2;
-    height: 600px;
-    /*overflow-y:scroll*/
-}
 
 .contact_form {
     background: #D9D9D9;
@@ -108,5 +112,15 @@ main {
 }
 
 .modal {
-   margin-top: 200px;
+    margin-top: 200px;
 }
+
+@media (min-width: 424px){
+    .bg_prices {
+    background-image: url("/static/medias/img/prices/lotus_prices.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 400px;
+    }   
+}
+

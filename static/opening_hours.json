@@ -1,5 +1,5 @@
 [
-    {"day" : "Lundi","hour" : ["09:00 - 19:30"]},
+    {"day" : "lundi","hour" : ["09:00 - 19:30"]},
     {"day" : "mardi","hour" : ["09:00 - 19:30"]},
     {"day" : "mercredi","hour" : ["FERMÉ"]},
     {"day" : "jeudi","hour" : ["09:00 - 19:30"]},

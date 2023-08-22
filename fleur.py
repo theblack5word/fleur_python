@@ -114,15 +114,14 @@ def contact():
 
 @app.route('/send_mail/', methods=["POST"])
 def send_mail():
-    # print('bonjour')
-    # result = request.form
-    # print(result)
-    # mail = request.form['mail']
-    # first_name = request.form['first_name']
-    # name = request.form['name']
-    # content = result['content']
-    msg = Message('Hello', sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
-    msg.body = "c'est le corp du message test"
+    object_mail= "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'], request.form['first_name'])
+    mail_body="Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui répondre voici son adresse : {2} \n bonne journée"
+    msg = Message(object_mail, sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
+    msg.body = mail_body.format(
+        request.form['name'],
+        request.form['first_name'],
+        request.form['mail'],
+        request.form['content'])
     mail.send(msg)
     return "Sent"
 

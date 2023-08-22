@@ -4,6 +4,7 @@ import locale
 import sqlite3
 import json
 
+from flask_mail import Mail, Message
 from flask import (
     Flask,
     g,
@@ -12,6 +13,14 @@ from flask import (
 )
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'mail.gandi.net'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'contact@fleurdeserenite.eu'
+app.config['MAIL_PASSWORD'] = 'KierAngela#44'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 DATABASE = 'guestBook.db'
 
@@ -105,14 +114,18 @@ def contact():
 
 @app.route('/send_mail/', methods=["POST"])
 def send_mail():
-    print('bonjour')
-    result = request.form
-    print(result)
+    # print('bonjour')
+    # result = request.form
+    # print(result)
     # mail = request.form['mail']
     # first_name = request.form['first_name']
     # name = request.form['name']
     # content = result['content']
-    return redirect('mailto:remi.bonnand@gmail.com?body='+str('hi'))
+    msg = Message('Hello', sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
+    msg.body = "c'est le corp du message test"
+    mail.send(msg)
+    return "Sent"
+
 
 @app.route('/who_i_am/')
 def who_i_am():

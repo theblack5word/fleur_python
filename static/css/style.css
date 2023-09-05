@@ -106,6 +106,10 @@ h1, h5, .card-title{
     height: 10vh;
 }
 
+.toast {
+    height: 50px;
+}
+
 .tarif-card{
     width: 11rem;
     height: 11rem;

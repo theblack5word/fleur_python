@@ -109,21 +109,23 @@ def comments():
 def contact():
     with open('static/opening_hours.json', 'r') as hours:
         data = json.load(hours)
-    return render_template('contactezmoi.html', opening_hours=data)
+    return render_template('contactezmoi.html', toaster=False)
 
 
 @app.route('/send_mail/', methods=["POST"])
 def send_mail():
-    object_mail= "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'], request.form['first_name'])
-    mail_body="Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui répondre voici son adresse : {2} \n bonne journée"
-    msg = Message(object_mail, sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
-    msg.body = mail_body.format(
-        request.form['name'],
-        request.form['first_name'],
-        request.form['mail'],
-        request.form['content'])
-    mail.send(msg)
-    return "Sent"
+    # object_mail= "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'], request.form['first_name'])
+    # mail_body="Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui répondre voici son adresse : {2} \n bonne journée"
+    # msg = Message(object_mail, sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
+    # msg.body = mail_body.format(
+    #     request.form['name'],
+    #     request.form['first_name'],
+    #     request.form['mail'],
+    #     request.form['content'])
+    # mail.send(msg)
+    # with open('static/opening_hours.json', 'r') as hours:
+    #     data = json.load(hours)
+    return render_template('contactezmoi.html', toaster=True)
 
 
 @app.route('/who_i_am/')

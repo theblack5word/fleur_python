@@ -1,5 +1,39 @@
 {% include 'components/header.html' %}
 
+<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+<script>
+console.log('wazaa out');
+console.log(toaster);
+</script>
+<!--
+<script>
+var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+
+    var toast = new bootstrap.Toast(toastLiveExample)
+    console.log(toaster)
+
+    console.log('wazaa in')
+    toast.show()
+
+
+</script>
+-->
+
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+        <span class="toast-body translate-middle-y">
+        Hello, world! This is a toast message.
+        </span> 
+        
+        <button type="button" class="btn-close translate-middle-y" data-bs-dismiss="toast" aria-label="Close"></button>
+        
+    </div>
+</div>
+
+
+
 <main class="overflow-auto">
     <div class="container-fluid h-100">
         <div class="row align-items-center justify-content-center h-100">

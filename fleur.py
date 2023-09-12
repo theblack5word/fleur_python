@@ -109,7 +109,7 @@ def comments():
 def contact():
     with open('static/opening_hours.json', 'r') as hours:
         data = json.load(hours)
-    return render_template('contactezmoi.html', toaster=False)
+    return render_template('contactezmoi.html')
 
 
 @app.route('/send_mail/', methods=["POST"])

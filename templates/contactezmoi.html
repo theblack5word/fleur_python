@@ -1,24 +1,28 @@
 {% include 'components/header.html' %}
 
 <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+{% if  toaster == false %}
 <script>
-console.log('wazaa out');
-console.log(toaster);
+console.log('wazaa false');
 </script>
-<!--
-<script>
-var toastTrigger = document.getElementById('liveToastBtn')
-var toastLiveExample = document.getElementById('liveToast')
+{% endif %}
+{% if  toaster == true %}
 
-    var toast = new bootstrap.Toast(toastLiveExample)
-    console.log(toaster)
+    <script>
+        var toastTrigger = document.getElementById('liveToastBtn')
+        var toastLiveExample = document.getElementById('liveToast')
 
-    console.log('wazaa in')
-    toast.show()
+        var toast = new bootstrap.Toast(toastLiveExample)
+        console.log(toaster)
 
+        console.log('wazaa in')
+        toast.show()
+            
+        console.log('wazaa in');
+    </script>
+{% endif %}
 
-</script>
--->
 
 <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

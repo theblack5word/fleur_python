@@ -1,44 +1,27 @@
 {% include 'components/header.html' %}
 
-<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
-
-{% if  toaster == false %}
-<script>
-console.log('wazaa false');
-</script>
-{% endif %}
-{% if  toaster == true %}
-
-    <script>
-        var toastTrigger = document.getElementById('liveToastBtn')
-        var toastLiveExample = document.getElementById('liveToast')
-
-        var toast = new bootstrap.Toast(toastLiveExample)
-        console.log(toaster)
-
-        console.log('wazaa in')
-        toast.show()
-            
-        console.log('wazaa in');
-    </script>
-{% endif %}
-
-
-<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-
-        <span class="toast-body translate-middle-y">
-        Hello, world! This is a toast message.
-        </span> 
-        
-        <button type="button" class="btn-close translate-middle-y" data-bs-dismiss="toast" aria-label="Close"></button>
-        
-    </div>
-</div>
-
 
 
 <main class="overflow-auto">
+
+    <script>
+
+    $(document).ready(function () {
+    console.log('Le code JavaScript du toast est exécuté.');
+        $('.toast').toast('show');
+    });
+    </script>
+
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Votre message a bien été envoyé</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
     <div class="container-fluid h-100">
         <div class="row align-items-center justify-content-center h-100">
             <div class="col-12 col-md-6 h-100 p-3">
@@ -74,16 +57,16 @@ console.log('wazaa false');
                 <div class="rounded-2 contact_form h-100 p-3 text-center overflow-auto">
                     <h5 class="pb-3 pt-3"> Les horaires</h5>
                     <div class="justify-content-center">
-                    {% for open in opening_hours %}
-                        <div class="row fs-5 mb-2">
-                            <span class="col text-end"> {{ open.day }} </span>
-                            <span class="col text-start">
-                            {% for hour in open.hour%}
-                            <div>{{ hour}}  </div>
-                            {% endfor %}</span>
-                        </div>
-                    {% endfor %}
-                </div>
+                        {% for open in opening_hours %}
+                            <div class="row fs-5 mb-2">
+                                <span class="col text-end"> {{ open.day }} </span>
+                                <span class="col text-start">
+                                {% for hour in open.hour%}
+                                <div>{{ hour}}  </div>
+                                {% endfor %}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

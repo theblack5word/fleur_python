@@ -92,10 +92,10 @@ def add_guest_book():
 @app.route('/add_comment/', methods=["POST"])
 def comment():
     query_db("INSERT INTO comments (name, visit_date, comment) VALUES(?,?,?)",
-            request.form['name'],
-            request.form['visit_date'],
-            request.form['comment'],
-            )
+             request.form['name'],
+             request.form['visit_date'],
+             request.form['comment'],
+             )
     return redirect('/guest_book')
 
 
@@ -109,7 +109,7 @@ def comments():
 def contact():
     with open('static/opening_hours.json', 'r') as hours:
         data = json.load(hours)
-    return render_template('contactezmoi.html', toaster=False, opening_hours=data)
+    return render_template('contactezmoi.html', opening_hours=data)
 
 
 @app.route('/send_mail/', methods=["POST"])
@@ -123,9 +123,11 @@ def send_mail():
     #     request.form['mail'],
     #     request.form['content'])
     # mail.send(msg)
+    # with open('static/opening_hours.json', 'r') as hours:
+    #     data = json.load(hours)
     with open('static/opening_hours.json', 'r') as hours:
         data = json.load(hours)
-    return render_template('contactezmoi.html', toaster=True, opening_hours=data)
+    return render_template('contactezmoi.html', opening_hours=data)
 
 
 @app.route('/who_i_am/')

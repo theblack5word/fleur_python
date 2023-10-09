@@ -3,19 +3,20 @@
 
 
 <main class="overflow-auto">
+{% if toaster=='false' %}
 
-    <script>
-
-    $(document).ready(function () {
-    console.log('Le code JavaScript du toast est exécuté.');
-        $('.toast').toast('show');
-    });
+    <script>    console.log('coucou');
+        $(document).ready(function () {
+        console.log('Le code JavaScript du toast est exécuté.');
+            $('.toast').toast('show');
+        });
     </script>
+{% endif %}
 
-<div class="toast-container position-fixed top-0 start-50 translate-middle-x">
+<div class="toast-container position-fixed top-50 start-50 translate-middle-x">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
+     <div class="toast-header">
+    
       <strong class="me-auto">Votre message a bien été envoyé</strong>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>

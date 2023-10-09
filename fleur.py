@@ -4,6 +4,7 @@ import locale
 import sqlite3
 import json
 
+from flask_mail import Mail, Message
 from flask import (
     Flask,
     g,
@@ -12,6 +13,14 @@ from flask import (
 )
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'mail.gandi.net'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'contact@fleurdeserenite.eu'
+app.config['MAIL_PASSWORD'] = 'KierAngela#44'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 DATABASE = 'guestBook.db'
 
@@ -83,10 +92,10 @@ def add_guest_book():
 @app.route('/add_comment/', methods=["POST"])
 def comment():
     query_db("INSERT INTO comments (name, visit_date, comment) VALUES(?,?,?)",
-             request.form['name'],
-             request.form['visit_date'],
-             request.form['comment'],
-             )
+            request.form['name'],
+            request.form['visit_date'],
+            request.form['comment'],
+            )
     return redirect('/guest_book')
 
 
@@ -100,8 +109,25 @@ def comments():
 def contact():
     with open('static/opening_hours.json', 'r') as hours:
         data = json.load(hours)
-    print(data)
-    return render_template('contactezmoi.html', opening_hours=data)
+    return render_template('contactezmoi.html', opening_hours=data, toaster='false')
+
+
+@app.route('/send_mail/', methods=["POST"])
+def send_mail():
+    object_mail= "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'], request.form['first_name'])
+    mail_body="Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui répondre voici son adresse : {2} \n bonne journée"
+    msg = Message(object_mail, sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
+    msg.body = mail_body.format(
+        request.form['name'],
+        request.form['first_name'],
+        request.form['mail'],
+        request.form['content'])
+    mail.send(msg)
+    with open('static/opening_hours.json', 'r') as hours:
+        data = json.load(hours)
+    with open('static/opening_hours.json', 'r') as hours:
+        data = json.load(hours)
+    return render_template('contactezmoi.html', opening_hours=data, toaster='true')
 
 
 @app.route('/who_i_am/')

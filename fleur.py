@@ -137,7 +137,9 @@ def who_i_am():
 
 @app.route('/activities/')
 def activities():
-    return render_template('activities.html')
+    with open('static/img_link.json', 'r') as img_link:
+        data = json.load(img_link)
+    return render_template('activities.html', img_link=data)
 
 
 @app.route('/prices/')

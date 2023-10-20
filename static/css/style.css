@@ -18,7 +18,19 @@ main {
 }
 
 .card-body>p{
-    line-height: 150%;
+    line-height: 1.8em;
+}
+
+.accordion-body>.card{
+    max-width: 1000px;
+}
+
+.accordion-body {
+    height: 450px;
+}
+
+.card>div>div>img{
+    max-height: 100%;
 }
 
 .img-who {

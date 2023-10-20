@@ -17,14 +17,23 @@ main {
     overflow-y:scroll
 }
 
-
+.card-body>p{
+    line-height: 150%;
+}
 
 .img-who {
     object-fit: contain;
     height: 500px;
 }
+
 h1, h5, .card-title{
     color: rgba(137, 61, 122, 1);
+    text-align: center;
+}
+
+.card-title {
+    height: 50px;
+    padding: auto;
 }
 
 .fleur_color {

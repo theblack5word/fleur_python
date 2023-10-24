@@ -73,7 +73,10 @@ def redirect_home():
 
 @app.route("/home/")
 def go_home():
-    return render_template('index.html')
+    with open('static/img_link_index.json', 'r') as imgs:
+        data = json.load(imgs)
+    return render_template('index.html',imgs=data)
+
 
 
 @app.route("/guest_book/")

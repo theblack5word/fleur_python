@@ -6,11 +6,11 @@
         <div class="row justify-content-center gy-2">
             <div class="col ">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[0].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
                             <h5 class="card-title">{{ prices[0].content.title }}</h5>
-                            <p class="card-text">(détail)</p>
+                            <p class="card-text">{{ prices[0].content.detail }}</p>
                             <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[0].content.price }}</h6>
                         </div>
                     </a>
@@ -31,7 +31,7 @@
             </div>
             <div class="col">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#{{prices[1].name}}_modal_Label" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
                             <h5 class="card-title">{{ prices[2].content.title }}</h5>
@@ -44,7 +44,7 @@
             </div>
             <div class="col">
                 <div class="card rounded-circle tarif-card m-auto">
-                    <a data-bs-target="#{{prices[1].name}}_modal_Label" data-bs-toggle="modal">
+                    <a data-bs-target="#{{prices[3].name}}_modal_Label" data-bs-toggle="modal">
                         <div class="card-body text-center">
                             <p></p>
                             <h5 class="card-title">{{ prices[3].content.title }}</h5>
@@ -63,11 +63,11 @@
     <div class="container-fluid  pt-5 d-none d-lg-block bg_prices h-100">
         <div class="row align-items-center m-auto ">
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-3">
-                <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[0].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
                         <h5 class="card-title">{{ prices[0].content.title }}</h5>
-                        <p class="card-text">(détail)</p>
+                        <p class="card-text">{{ prices[0].content.detail }}</p>
                         <h6 class="card-subtitle mb-2 text-body-secondary">{{ prices[0].content.price }}</h6>
                     </div>
                 </a>
@@ -84,7 +84,7 @@
             </div>
             <div class="col-lg-2 "></div>
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-3 offset-lg-2">
-                <a data-bs-target="#{{prices[3].name}}_modal_Label" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[2].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
                         <h5 class="card-title">{{ prices[2].content.title }}</h5>
@@ -94,7 +94,7 @@
                 </a>
             </div>
             <div class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-4">
-                <a data-bs-target="#{{prices[0].name}}_modal_Label" data-bs-toggle="modal">
+                <a data-bs-target="#{{prices[3].name}}_modal_Label" data-bs-toggle="modal">
                     <div class="card-body text-center">
                         <p></p>
                         <h5 class="card-title">{{ prices[3].content.title }}</h5>

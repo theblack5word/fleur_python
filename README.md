@@ -6,9 +6,10 @@ sudo apt install python3
 
 sudo apt install python3-flask
 
+sudo apt install python3-flask-mail
+
 Ensuite, exécuter le app.py à la racine 
 ./app.py
 
-modules nécessaires :
-sudo apt install python3-flask-mail
+
 

@@ -2,6 +2,10 @@
     font-size: 1em;
 }
 
+html {
+    width: 100%;
+}
+
 nav ul {
     align-items: center;
     justify-content: space-around;
@@ -105,11 +109,22 @@ h1, h5, .card-title{
     transform: rotateY(-180deg);
 }
 
-.footer-basic, .footer-basic a {
+.footer-basic {
     background-color: #ffffff;
     text-decoration: none;
     color: rgba(137, 61, 122, 1);
     font-weight: bold;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-basic a {
+    text-decoration: none;
+    color: rgba(137, 61, 122, 1);
+
 }
 
 .btn, .btn-outline-primary{

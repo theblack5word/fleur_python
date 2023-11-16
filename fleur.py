@@ -14,6 +14,7 @@ from flask import (
 
 app = Flask(__name__)
 
+# app.config['APPLICATION_ROOT'] = '/'
 app.config['MAIL_SERVER'] = 'mail.gandi.net'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'contact@fleurdeserenite.eu'
@@ -23,6 +24,7 @@ app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 DATABASE = 'guestBook.db'
+
 
 # test
 def get_db():
@@ -75,8 +77,7 @@ def redirect_home():
 def go_home():
     with open('static/img_link_index.json', 'r') as imgs:
         data = json.load(imgs)
-    return render_template('index.html',imgs=data)
-
+    return render_template('index.html', imgs=data)
 
 
 @app.route("/guest_book/")
@@ -93,12 +94,12 @@ def add_guest_book():
 
 
 @app.route('/add_comment/', methods=["POST"])
-def comment():
+def add_comment():
     query_db("INSERT INTO comments (name, visit_date, comment) VALUES(?,?,?)",
-            request.form['name'],
-            request.form['visit_date'],
-            request.form['comment'],
-            )
+             request.form['name'],
+             request.form['visit_date'],
+             request.form['comment'],
+             )
     return redirect('/guest_book')
 
 
@@ -117,9 +118,11 @@ def contact():
 
 @app.route('/send_mail/', methods=["POST"])
 def send_mail():
-    object_mail= "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'], request.form['first_name'])
-    mail_body="Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui répondre voici son adresse : {2} \n bonne journée"
-    msg = Message(object_mail, sender = 'contact@fleurdeserenite.eu', recipients = ['remi.bonnand@gmail.com'])
+    object_mail = "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'],
+                                                                         request.form['first_name'])
+    mail_body = ("Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui "
+                 "répondre voici son adresse : {2} \n bonne journée")
+    msg = Message(object_mail, sender='contact@fleurdeserenite.eu', recipients=['remi.bonnand@gmail.com'])
     msg.body = mail_body.format(
         request.form['name'],
         request.form['first_name'],

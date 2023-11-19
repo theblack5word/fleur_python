@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/static/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <script src={{ url_for('static', filename='js/bootstrap.bundle.min.js') }}></script>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }}>
     <title>Fleur de Sérénité</title>
 </head>
 <body>
 <header>
     <div class="py-2">
-        <img class="rounded mx-auto d-block" src="/static/medias/img/logo.png" alt="logo du site, une fleur de lotus">
+        <img class="rounded mx-auto d-block" src={{ url_for('static', filename='medias/img/logo.png') }} alt="logo du site, une fleur de lotus">
     </div>
     <div class="container">
         <nav class="navbar navbar-expand-lg ">
@@ -28,27 +27,27 @@
                     <ul class="container navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link {% if (request.url.endswith('home/')) %}active_nav_link {% endif %}"
-                               href="/">Accueil</a>
+                               href="{{ url_for('home') }}">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if (request.url.endswith('who_i_am/')) %}active_nav_link {% endif %}"
-                               href="/who_i_am">Qui suis-je</a>
+                               href="{{ url_for('who_i_am') }}">Qui suis-je</a>
                         </li>
                         <li class="nav-item"><a
                                 class="nav-link {% if (request.url.endswith('activities/') ) %}active_nav_link {% endif %}"
-                                href="/activities">Activités</a>
+                                href="{{ url_for('activities') }}">Activités</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if (request.url.endswith('contact/') ) %}active_nav_link {% endif %}"
-                               href="/contact">Contactez-moi</a>
+                               href="{{ url_for('contact') }}">Contactez-moi</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if (request.url.endswith('prices/') ) %}active_nav_link {% endif %}"
-                               href="/prices">Tarifs</a>
+                               href="{{ url_for('prices') }}">Tarifs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if (request.url.endswith('guest_book/') ) %}active_nav_link {% endif %}"
-                               href="/guest_book">Livre d'or</a>
+                               href="{{ url_for('guest_book') }}">Livre d'or</a>
                         </li>
                     </ul>
                 </div>

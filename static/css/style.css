@@ -19,6 +19,7 @@ main {
     background: #B5B2B2;
     height: 600px;
     overflow-y:scroll;
+    margin-bottom:72px;
 }
 
 .card-body>p{

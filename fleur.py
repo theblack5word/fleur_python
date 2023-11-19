@@ -74,14 +74,14 @@ def redirect_home():
 
 
 @app.route("/home/")
-def go_home():
+def home():
     with open('static/img_link_index.json', 'r') as imgs:
         data = json.load(imgs)
     return render_template('index.html', imgs=data)
 
 
 @app.route("/guest_book/")
-def add_guest_book():
+def guest_book():
     recent_comments = query_db("SELECT name, visit_date, comment FROM comments ORDER BY visit_date DESC")
     return render_template('guest_book.html', recent_comments=[
         {

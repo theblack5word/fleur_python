@@ -1,10 +1,26 @@
-
-
-{
-    "activities_reiki_link" : "medias/img/reiki.jpg",
-    "activities_reiki_alt" : "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement", 
-    "activities_eft_link" : "medias/img/EFT.jpg",
-    "activities_eft_alt" : "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement",
-    "activities_fleur_de_bach_link" : "medias/img/bach.jpg",
-    "activities_fleur_de_bach_alt" : "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement"
-}
+[
+  {
+    "activity": "Reiki",
+    "link": "medias/img/reiki.jpg",
+    "alt": "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement",
+    "activities_reiki_description": "Reiki du Japonais qui signifie \"Rei\" (=universel) et \"Ki\"  énergie vitale Il s`'agit donc de l`'`énergie vitale universelle. Le Reiki est une approche holistique d`'`origine japonaise appartenant aux approches dites \"énergétiques\". Il consiste à éveiller en chacun de nous un processus dynamique de bien-être en intervenant sur le champ vibratoire de la personne. Par imposition des mains sur des zones précises du corps, le praticien invite le client à entrer en méditation et à débloquer des nœuds émotionnels. Le Reiki permet une meilleure harmonisation du corps et de l'esprit afin de trouver un équilibre de vie plus serein. "
+  },
+  {
+    "activity": "EFT",
+    "link": "medias/img/EFT.jpg",
+    "alt": "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement",
+    "activities_reiki_description": "Reiki du Japonais qui signifie \"Rei\" (=universel) et \"Ki\"  énergie vitale Il s`'agit donc de l`'`énergie vitale universelle. Le Reiki est une approche holistique d`'`origine japonaise appartenant aux approches dites \"énergétiques\". Il consiste à éveiller en chacun de nous un processus dynamique de bien-être en intervenant sur le champ vibratoire de la personne. Par imposition des mains sur des zones précises du corps, le praticien invite le client à entrer en méditation et à débloquer des nœuds émotionnels. Le Reiki permet une meilleure harmonisation du corps et de l'esprit afin de trouver un équilibre de vie plus serein. "
+  },
+  {
+    "activity": "Fleur de Bach",
+    "link": "medias/img/bach.jpg",
+    "alt": "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement",
+    "activities_reiki_description": "Reiki du Japonais qui signifie \"Rei\" (=universel) et \"Ki\"  énergie vitale Il s`'agit donc de l`'`énergie vitale universelle. Le Reiki est une approche holistique d`'`origine japonaise appartenant aux approches dites \"énergétiques\". Il consiste à éveiller en chacun de nous un processus dynamique de bien-être en intervenant sur le champ vibratoire de la personne. Par imposition des mains sur des zones précises du corps, le praticien invite le client à entrer en méditation et à débloquer des nœuds émotionnels. Le Reiki permet une meilleure harmonisation du corps et de l'esprit afin de trouver un équilibre de vie plus serein. "
+  },
+  {
+    "activities_eft_link": "",
+    "activities_eft_alt": "",
+    "activities_fleur_de_bach_link": "",
+    "activities_fleur_de_bach_alt": "mains du thérapeute qui reste en suspend au dessus de la tête du client lors de traitement"
+  }
+]

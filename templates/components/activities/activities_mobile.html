@@ -41,20 +41,7 @@
                                 <div class="col-md-8 row align-items-center h-100">
                                     <div class="card-body col overflow-auto h-100">
                                         <h5 class="card-title">Le Reiki </h5>
-                                        <p class="card-text ">Reiki du Japonais qui signifie "Rei"
-                                            (=universel)
-                                            et "Ki" (= énergie vitale) Il s'agit donc de l'énergie vitale
-                                            universelle. Le Reiki est une approche holistique d'origine
-                                            japonaise appartenant aux approches dites "énergétiques". Il
-                                            consiste à éveiller en chacun de nous un processus dynamique de
-                                            bien-être en intervenant sur le champ vibratoire de la personne.
-                                            Par
-                                            imposition des mains sur des zones précises du corps, le
-                                            praticien
-                                            invite le client à entrer en méditation et à débloquer des nœuds
-                                            émotionnels. Le Reiki permet une meilleure harmonisation du
-                                            corps et
-                                            de l'esprit afin de trouver un équilibre de vie plus serein.</p>
+                                        <p class="card-text "> {{ img_link.activities_reiki_description }}  </p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +56,9 @@
                                 <div class="m-auto h-100 col-md-4 d-none d-md-block ">
                                     <div class="row align-items-center justify-content-center h-100">
                                         <div class="col m-auto">
-                                            <img class="w-100" src={{ url_for('static', filename=img_link.activities_eft_link) }} class="col m-auto"
+                                            <img 
+                                            class="w-100 col m-auto" 
+                                            src={{ url_for('static', filename=img_link.activities_eft_link) }} 
                                             alt={{ img_link.activities_eft_alt }}>
                                         </div>
                                     </div>

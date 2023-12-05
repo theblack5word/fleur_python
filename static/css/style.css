@@ -19,7 +19,7 @@ main {
     background: #B5B2B2;
     height: 600px;
     overflow-y:scroll;
-    margin-bottom:72px;
+    margin-bottom: 100px;
 }
 
 .card-body>p{
@@ -163,6 +163,7 @@ h1, h5, .card-title{
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 400px;
-    }   
+    }
+
 }
 

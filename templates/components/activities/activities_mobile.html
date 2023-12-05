@@ -1,4 +1,4 @@
-<div class=" d-md-block d-lg-none">
+<div class=" d-md-block d-lg-none ">
     <div class="container">
         <div class="col">
 
@@ -33,7 +33,7 @@
                                 <div class="m-auto h-100 col-md-4 d-none d-md-block ">
                                     <div class="row align-items-center justify-content-center h-100">
                                         <div class="col m-auto">
-                                            <img class="w-100" src={{ url_for('static', filename=img_link.activities_reiki_link) }} class="col m-auto"
+                                            <img class="w-100" src={{ url_for('static', filename=img_link[0].link) }}
                                             alt={{ img_link.activities_reiki_alt }} >
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                                 <div class="col-md-8 row align-items-center h-100">
                                     <div class="card-body col overflow-auto h-100">
                                         <h5 class="card-title">Le Reiki </h5>
-                                        <p class="card-text "> {{ img_link.activities_reiki_description }}  </p>
+                                        <p class="card-text "> {{ img_link[0].description }}  </p>
                                     </div>
                                 </div>
                             </div>
@@ -56,9 +56,9 @@
                                 <div class="m-auto h-100 col-md-4 d-none d-md-block ">
                                     <div class="row align-items-center justify-content-center h-100">
                                         <div class="col m-auto">
-                                            <img 
-                                            class="w-100 col m-auto" 
-                                            src={{ url_for('static', filename=img_link.activities_eft_link) }} 
+                                            <img
+                                                    class="w-100"
+                                            src={{ url_for('static', filename=img_link[1].link) }}
                                             alt={{ img_link.activities_eft_alt }}>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                 <div class="col-md-8 row align-items-center h-100">
                                     <div class="card-body col overflow-auto h-100">
                                         <h5 class="card-title">EFT (Emotional Freedom Technique)</h5>
-                                        <p class="card-text ">Emotional Freedom Techniques
+                                        <p class="card-text mb-5">Emotional Freedom Techniques
                                             (Techniques de
                                             Libération Émotionnelle). D'origine Américaine, basée sur les
                                             méridiens Chinois, l'EFT est une pratique psycho-corporelle. Par
@@ -93,7 +93,7 @@
                                 <div class="m-auto h-100 col-md-4 d-none d-md-block h-100">
                                     <div class="row align-items-center justify-content-center h-100">
                                         <div class="col m-auto">
-                                            <img class="w-100" src={{ url_for('static', filename=img_link.activities_fleur_de_bach_link) }} 
+                                            <img class="w-100" src={{ url_for('static', filename=img_link[2].link) }}
                                             alt={{ img_link.activities_fleur_de_bach_alt }} >
                                         </div>
                                     </div>

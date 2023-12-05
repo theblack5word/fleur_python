@@ -15,12 +15,9 @@ from flask import (
 app = Flask(__name__)
 
 # app.config['APPLICATION_ROOT'] = '/'
-app.config['MAIL_SERVER'] = 'mail.gandi.net'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'contact@fleurdeserenite.eu'
-app.config['MAIL_PASSWORD'] = '-****'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
+
+app.config.from_pyfile('../webmail_config.py')
+
 mail = Mail(app)
 
 DATABASE = 'guestBook.db'

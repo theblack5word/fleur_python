@@ -7,6 +7,7 @@
 
 # User-specific stuff
 .idea/
+venv/
 
 *.swp
 

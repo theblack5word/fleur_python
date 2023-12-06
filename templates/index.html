@@ -8,12 +8,12 @@
                     <p class="text-center fs-1 ">Tiffany Bonnand {{ test }}</p>
                     <p class="text-center fs-3">Praticienne Reïki, EFT </br> et fleur de Bach  </p>
                 </div>
-                <div class="col-lg-8 col-12 " style="height: 400px">
+                <div class="col-lg-8 col-12 " >
                     <div id="carouselExampleInterval" class="carousel slide h-100"
                         data-bs-ride="carousel">
                         <div class="carousel-inner h-100">
                             <div class="carousel-item active">
-                                <img src={{ url_for('static', filename=imgs[0].link) }} class="d-block w-100  " alt= {{ imgs[0].alt }}>
+                                <img src={{ url_for('static', filename=imgs[0].link) }} class="d-block w-100" alt= {{ imgs[0].alt }}>
                             </div>
                             <div class="carousel-item ">
                                 <img src={{ url_for('static', filename=imgs[1].link) }} class="d-block w-100  " alt= {{ imgs[1].alt }}>

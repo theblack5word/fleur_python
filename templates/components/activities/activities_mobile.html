@@ -1,123 +1,45 @@
 <div class=" d-md-block d-lg-none ">
     <div class="container">
         <div class="col">
-
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="row p-2">
-                    <div class="btn-group col" role="group" aria-label="Basic  ">
-                        <button class=" collapsed fw-bold btn btn-custom" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseTwo" aria-expanded="true"
-                                aria-controls="flush-collapseTwo">
-                            Le Reiki
-                        </button>
-                        <button class=" collapsed fw-bold btn btn-outline-primary btn-custom" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                aria-controls="flush-collapseOne">
-                            EFT
-                        </button>
-                        <button class=" collapsed fw-bold btn btn-outline-primary btn-custom" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                aria-controls="flush-collapseThree">
-                            Fleurs de Bach
-                        </button>
-                    </div>
-                </div>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse show"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="card m-auto h-100">
-                            <div class="row g-0 h-100">
-                                <div class="m-auto h-100 col-md-4 d-none d-md-block ">
-                                    <div class="row align-items-center justify-content-center h-100">
-                                        <div class="col m-auto">
-                                            <img class="w-100" src={{ url_for('static', filename=img_link[0].link) }}
-                                            alt={{ img_link.activities_reiki_alt }} >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 row align-items-center h-100">
-                                    <div class="card-body col overflow-auto h-100">
-                                        <h5 class="card-title">Le Reiki </h5>
-                                        <p class="card-text "> {{ img_link[0].description }}  </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="card m-auto h-100">
-                            <div class="row g-0 h-100">
-                                <div class="m-auto h-100 col-md-4 d-none d-md-block ">
-                                    <div class="row align-items-center justify-content-center h-100">
-                                        <div class="col m-auto">
-                                            <img
-                                                    class="w-100"
-                                            src={{ url_for('static', filename=img_link[1].link) }}
-                                            alt={{ img_link.activities_eft_alt }}>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 row align-items-center h-100">
-                                    <div class="card-body col overflow-auto h-100">
-                                        <h5 class="card-title">EFT (Emotional Freedom Technique)</h5>
-                                        <p class="card-text mb-5">Emotional Freedom Techniques
-                                            (Techniques de
-                                            Libération Émotionnelle). D'origine Américaine, basée sur les
-                                            méridiens Chinois, l'EFT est une pratique psycho-corporelle. Par
-                                            de
-                                            légers tapotements et répétitions d'affirmations positives, le
-                                            praticien aide le client à débloquer une émotion vive qui bloque
-                                            son
-                                            esprit et l'empêche de vivre sereinement sa vie. Ancienne
-                                            blessure,
-                                            choc émotionnel, stress.... l'EFT est comme un "reset" de
-                                            l'esprit
-                                            permettant de "digérer" cette émotion.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="card m-auto h-100">
-                            <div class="row g-0 h-100">
-                                <div class="m-auto h-100 col-md-4 d-none d-md-block h-100">
-                                    <div class="row align-items-center justify-content-center h-100">
-                                        <div class="col m-auto">
-                                            <img class="w-100" src={{ url_for('static', filename=img_link[2].link) }}
-                                            alt={{ img_link.activities_fleur_de_bach_alt }} >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 row align-items-center h-100 overflow-auto">
-                                    <div class="card-body col">
-                                        <h5 class="card-title">Fleurs de Bach</h5>
-                                        <p class="card-text ">Elixirs floraux naturels obtenus à
-                                            partir d'une
-                                            méthode d'infusion de plantes capable de préserver leurs
-                                            principes
-                                            actifs. Ils libèrent une énergie vibratoire qui transforment des
-                                            émotions perturbatrices en un état plus serein. Je ne vends pas
-                                            les
-                                            fleurs de Bach, mais suis en capacité de les conseiller afin de
-                                            compléter le travail qui aura été fait en séance, à la
-                                            maison.</p>
+                    <div class="btn-group col" role="group" aria-label="Basic">
+                        {% for activity in img_link %}
+                            <button class=" collapsed fw-bold btn btn-custom" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse{{ loop.index }}" aria-expanded="true"
+                                    aria-controls="flush-collapse{{ loop.index }}">
+                                {{ activity.title }}
+                            </button>
 
+                        {% endfor %}
+                    </div>
+                </div>
+                {% for activity in img_link %}
+                    <div id="flush-collapse{{ loop.index }}" class="accordion-collapse collapse show"
+                         data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="card m-auto h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="m-auto h-100 col-md-4 d-none d-md-block ">
+                                        <div class="row align-items-center justify-content-center h-100">
+                                            <div class="col m-auto">
+                                                <img class="w-100" src={{ url_for('static', filename=activity.link) }}
+                                                        alt={{ activity.alt }} >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 row align-items-center h-100">
+                                        <div class="card-body col overflow-auto h-100">
+                                            <h5 class="card-title"> {{ activity.title }}</h5>
+                                            <p class="card-text overflow-auto text-wrap">{{ activity.description }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

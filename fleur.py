@@ -140,8 +140,8 @@ def who_i_am():
 
 @app.route('/activities/')
 def activities():
-    with open('static/img_link.json', 'r') as img_link:
-        data = json.load(img_link)
+    with open('static/activities_data.json', 'r') as dataFile:
+        data = json.load(dataFile)
     return render_template('activities.html', img_link=data)
 
 

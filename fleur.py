@@ -10,17 +10,18 @@ from flask import (
     g,
     render_template,
     request, redirect,
+    url_for,
 )
 
 app = Flask(__name__)
 
-# app.config['APPLICATION_ROOT'] = '/'
 
-app.config.from_pyfile('../webmail_config.py')
+app.config.from_pyfile('../config.py')
+#app.config['APPLICATION_ROOT'] = '/6k1CaGxhIwa7GIK23wJo'
+DATABASE = app.config['APPLICATION_DATABASE']
 
 mail = Mail(app)
 
-DATABASE = 'guestBook.db'
 
 
 # test
@@ -67,12 +68,12 @@ def init():
 
 @app.route("/")
 def redirect_home():
-    return redirect('/home')
+    return redirect(url_for('home'))
 
 
 @app.route("/home/")
 def home():
-    with open('static/img_link_index.json', 'r') as imgs:
+    with open('static/img_link_index.json', 'rb') as imgs:
         data = json.load(imgs)
     return render_template('index.html', imgs=data)
 
@@ -108,7 +109,7 @@ def comments():
 
 @app.route('/contact/')
 def contact():
-    with open('static/opening_hours.json', 'r') as hours:
+    with open('static/opening_hours.json', 'rb') as hours:
         data = json.load(hours)
     return render_template('contactezmoi.html', opening_hours=data, toaster='false')
 
@@ -126,9 +127,9 @@ def send_mail():
         request.form['mail'],
         request.form['content'])
     mail.send(msg)
-    with open('static/opening_hours.json', 'r') as hours:
+    with open('static/opening_hours.json', 'rb') as hours:
         data = json.load(hours)
-    with open('static/opening_hours.json', 'r') as hours:
+    with open('static/opening_hours.json', 'rb') as hours:
         data = json.load(hours)
     return render_template('contactezmoi.html', opening_hours=data, toaster='true')
 
@@ -140,14 +141,14 @@ def who_i_am():
 
 @app.route('/activities/')
 def activities():
-    with open('static/activities_data.json', 'r') as dataFile:
+    with open('static/activities_data.json', 'rb') as dataFile:
         data = json.load(dataFile)
     return render_template('activities.html', img_link=data)
 
 
 @app.route('/prices/')
 def prices():
-    with open('static/prices.json', 'r') as prices_json:
+    with open('static/prices.json', 'rb') as prices_json:
         data = json.load(prices_json)
     return render_template('prices.html', prices=data)
 

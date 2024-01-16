@@ -17,9 +17,14 @@ nav ul {
 
 main {
     background: #B5B2B2;
-    height: 600px;
+    /*height: 600px;*/
     overflow-y:scroll;
-    margin-bottom: 100px;
+    margin-bottom: 160px;
+}
+
+.carrousel-index{
+    max-height: 300px;
+    aspect-ratio: initial;
 }
 
 .card-body>p{
@@ -144,9 +149,7 @@ h1, h5, .card-title{
     background-color: #ffffff;
     text-decoration: none;
     color: rgba(137, 61, 122, 1);
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    height: 160px;
     width: 100%;
     text-align: center;
 }
@@ -164,6 +167,16 @@ h1, h5, .card-title{
     background-position: center bottom;
     background-size: 400px;
     }
-
+.footer-basic {
+    background-color: #ffffff;
+    text-decoration: none;
+    color: rgba(137, 61, 122, 1);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
 }
 

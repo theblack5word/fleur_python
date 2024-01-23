@@ -17,9 +17,9 @@ nav ul {
 
 main {
     background: #B5B2B2;
-    /*height: 600px;*/
+    height: 600px;
     overflow-y:scroll;
-    margin-bottom: 160px;
+    margin-bottom: 100px;
 }
 
 .carrousel-index{
@@ -142,26 +142,12 @@ h1, h5, .card-title{
 }
 
 .modal {
-    margin-top: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.footer-basic {
-    background-color: #ffffff;
-    text-decoration: none;
-    color: rgba(137, 61, 122, 1);
-    height: 160px;
-    width: 100%;
-    text-align: center;
-}
 
-.footer-basic a {
-    text-decoration: none;
-    color: rgba(137, 61, 122, 1);
-
-}
-
-@media (min-width: 424px){
-    .bg_prices {
+.bg_prices {
     background-image: url("/static/medias/img/prices/lotus_prices.png");
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -178,5 +164,30 @@ h1, h5, .card-title{
     height: 80px;
     text-align: center;
 }
+.footer-basic {
+    background-color: #ffffff;
+    text-decoration: none;
+    color: rgba(137, 61, 122, 1);
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-basic a {
+    text-decoration: none;
+    color: rgba(137, 61, 122, 1);}
+
+
+
+@media (min-width: 424px){
+    .footer-mobile {
+        display: none;
+}
+@media (max-width: 424px) {
+    .footer-basic {
+        display: none;
+    }
+}
+
 }
 

@@ -1,193 +1,193 @@
 * {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 html {
-    width: 100%;
+  width: 100%;
 }
 
 nav ul {
-    align-items: center;
-    justify-content: space-around;
-    /*padding-left:5em;*/
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  /*padding-left:5em;*/
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 main {
-    background: #B5B2B2;
-    height: 600px;
-    overflow-y:scroll;
-    margin-bottom: 100px;
+  background: #b5b2b2;
+  height: 600px;
+  overflow-y: scroll;
+  margin-bottom: 100px;
 }
 
-.carrousel-index{
-    max-height: 300px;
-    aspect-ratio: initial;
+.card-subtitle {
+  font-weight: bold;
 }
 
-.card-body>p{
-    line-height: 1.8em;
+.carrousel-index {
+  max-height: 300px;
+  aspect-ratio: initial;
 }
 
-.accordion-body>.card{
-    max-width: 1000px;
+.card-body > p {
+  line-height: 1.8em;
+}
+
+.accordion-body > .card {
+  max-width: 1000px;
 }
 
 .accordion-body {
-    height: 450px;
+  height: 450px;
 }
 
-.card>div>div>img{
-    max-height: 100%;
+.card > div > div > img {
+  max-height: 100%;
 }
 
 .img-who {
-    object-fit: contain;
-    height: 500px;
+  object-fit: contain;
+  height: 500px;
 }
 
-h1, h5, .card-title{
-    color: rgba(137, 61, 122, 1);
-    text-align: center;
+h1,
+h5,
+.card-title {
+  color: rgba(137, 61, 122, 1);
+  text-align: center;
 }
 
 .card-title {
-    height: 50px;
-    padding: auto;
+  height: 50px;
+  padding: auto;
 }
 
 .fleur_color {
-    color: rgba(137, 61, 122, 1);
+  color: rgba(137, 61, 122, 1);
 }
 
 .active_nav_link {
-    color: rgba(137, 61, 122, 1);
-    font-weight: bold;
+  color: rgba(137, 61, 122, 1);
+  font-weight: bold;
 }
 
-.message_contact{
-    height: 100px;
+.message_contact {
+  height: 100px;
 }
 .presentation_Tiffany {
-    height: 60vh;
+  height: 60vh;
 }
 
-.btn-custom:hover, .btn-custom:focus, .btn-custom::selection
-{
-    background-color: rgba(137, 61, 122, 1);
-    border-color: rgba(137, 61, 122, 1);
-    color: white;
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom::selection {
+  background-color: rgba(137, 61, 122, 1);
+  border-color: rgba(137, 61, 122, 1);
+  color: white;
 }
 
 .card-container {
-    position: relative;
-    height: 450px;
-    width: 300px;
+  position: relative;
+  height: 450px;
+  width: 300px;
 }
 
 .card-container:hover .card {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card2 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    transition: all 0.3s ease;
-    transform-style: preserve-3d;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .card-front {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    margin: auto;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  margin: auto;
 }
 
 .card-back {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(-180deg);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
 }
 
-
-
-.btn, .btn-outline-primary{
-    color: rgba(137, 61, 122, 1);
-    border-color: rgba(137, 61, 122, 1);
+.btn,
+.btn-outline-primary {
+  color: rgba(137, 61, 122, 1);
+  border-color: rgba(137, 61, 122, 1);
 }
-
-
 
 .contact_form {
-    background: #D9D9D9;
+  background: #d9d9d9;
 }
 
 .test {
-    height: 10vh;
+  height: 10vh;
 }
 
 .toast {
-    height: 50px;
+  height: 50px;
 }
 
-.tarif-card{
-    width: 11rem;
-    height: 11rem;
+.tarif-card {
+  width: 11rem;
+  height: 11rem;
 }
 
 .modal {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-
 
 .bg_prices {
-    background-image: url("/static/medias/img/prices/lotus_prices.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 400px;
-    }
-.footer-basic {
-    background-color: #ffffff;
-    text-decoration: none;
-    color: rgba(137, 61, 122, 1);
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    text-align: center;
+  background-image: url("/static/medias/img/prices/lotus_prices.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 400px;
 }
 .footer-basic {
-    background-color: #ffffff;
-    text-decoration: none;
-    color: rgba(137, 61, 122, 1);
-    height: 100px;
-    width: 100%;
-    text-align: center;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: rgba(137, 61, 122, 1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+.footer-basic {
+  background-color: #ffffff;
+  text-decoration: none;
+  color: rgba(137, 61, 122, 1);
+  height: 100px;
+  width: 100%;
+  text-align: center;
 }
 
 .footer-basic a {
-    text-decoration: none;
-    color: rgba(137, 61, 122, 1);}
-
-
-
-@media (min-width: 424px){
-    .footer-mobile {
-        display: none;
+  text-decoration: none;
+  color: rgba(137, 61, 122, 1);
 }
-@media (max-width: 424px) {
+
+@media (min-width: 424px) {
+  .footer-mobile {
+    display: none;
+  }
+  @media (max-width: 424px) {
     .footer-basic {
-        display: none;
+      display: none;
     }
+  }
 }
-
-}
-

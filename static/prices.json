@@ -1,31 +1,34 @@
 [
   {
-    "name" : "carte_cadeau" , "content" : {
-    "title": "carte cadeau",
-    "price": "",
-    "detail": "cliquez",
-    "info": "Offrez un moment de détente à un proche, le montant est à votre convenance"}
+    "name": "carte_cadeau",
+    "content": {
+      "title": "carte cadeau",
+      "price": "personnalisé",
+      "info": "Offrez un moment de détente à un proche, le montant est à votre convenance"
+    }
   },
   {
-    "name" : "animal" , "content" : {
+    "name": "animal",
+    "content": {
       "title": "animal",
       "price": "25 €",
-      "detail": "cliquez",
-      "info": "séance plus courte, de 10 à 20 min. En effet, dans cette situation le Reiki est apporté à l'animal selon ses besoins. Ce n'est pas moi qui vais aller le chercher, mais lui qui va venir à moi pour le recevoir"}
+      "info": "séance plus courte, de 10 à 20 min. En effet, dans cette situation le Reiki est apporté à l'animal selon ses besoins. Ce n'est pas moi qui vais aller le chercher, mais lui qui va venir à moi pour le recevoir"
+    }
   },
   {
-    "name" : "pack_10_seances" , "content" : {
+    "name": "pack_10_seances",
+    "content": {
       "title": "pack de 10 séances",
       "price": "350 €",
-      "detail": "cliquez",
-      "info": "prenez 10 séances en avance, et prenez vous rendez-vous quand vous le souhaitez par la suite"}
+      "info": "prenez 10 séances en avance, et prenez vous rendez-vous quand vous le souhaitez par la suite"
+    }
   },
   {
-    "name" : "classique" , "content" : {
+    "name": "classique",
+    "content": {
       "title": "classique ou découverte",
       "price": "25 - 50 €",
-      "detail": "cliquez",
       "info": "première séance à 25€ : accueil, prise de connaissance et recherche des besoins par le dialogue et remplissage d'un questionnaire. Après cela, la séance se déroule en fonction de vos besoins et de vos envies. Je peux, si je sens la présence d'un souvenir émotionnel très fort, vous proposer une séance d'EFT. A la suite de cela, vous vous installerez confortablement sur la table de massage. Pendant ce temps, je vous suggère des fleurs de Bach pour prolonger le bien-être à la maison (vous pourrez repartir avec les références). Lorsque vous êtes bien installé.e. je commence la séance de reiki, sur fond musical. A la fin de la séance, vous pouvez, si vous le souhaitez, prendre un petit temps pour échanger sur vos ressentis. \nDurée : 1h30 \n séance classique à 50€: c'est le même déroulé que la première séance sans la prise de connaissance et le questionnaire à remplir. Nous prendrons juste un petit temps d'échange en début de séance pour connaître vos besoins du moment. De fait, la durée est plus courte, comptez env. 1h. \n "
-  }
+    }
   }
 ]

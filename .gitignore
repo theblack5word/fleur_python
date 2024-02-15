@@ -8,6 +8,7 @@
 # User-specific stuff
 .idea/
 venv/
+.vscode/
 
 *.swp
 

@@ -1,74 +1,14 @@
 <footer class="footer-basic p-1 ">
     <div class="container text-center">
         <div class="row align-items-center">
-            <div class="col-md-4 col-12">
-                <p> Téléphone: 06 63 80 86 10 <br/>
-                    e-mail: contact@fleurdeserenite.eu</p>
+            <div class="col">
+                <a href="{{ url_for('contact') }}">Coordonnées</a>
             </div>
-            <div class="col-md-4 col-12">
-                <p>
-                    1 rue du rouge gorge<br/>
-                    44260 SAVENAY</p>
-            </div>
-            <div class="col-md-4 col-12">
+            <div class="col">
                 <a href="#">Mentions légales</a>
             </div>
         </div>
     </div>
-</footer>
-<footer class="footer-mobile p-1 ">
-    <div class="container text-center">
-        <div class="row align-items-center">
-            <div class="col-md-4 col-12">
-                <a data-bs-target="#address_modal_Label" data-bs-toggle="modal">
-                 Adresse
-                </a>
-            </div>
-            <div class="col-md-4 col-12">
-                <a data-bs-target="#contact_modal_Label" data-bs-toggle="modal">
-                 Contact
-                </a>
-            </div>
-            <div class="col-md-4 col-12">
-                <a href="#">Mentions légales</a>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Modal -->
-    <div aria-hidden="true" aria-labelledby="contact_modal_Label" class="modal fade" id="contact_modal_Label"
-         tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
-                </div>
-                <div class="modal-body">
-             <p> Téléphone: 06 63 80 86 10 <br/>
-                    e-mail: contact@fleurdeserenite.eu</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div aria-hidden="true" aria-labelledby="address_modal_Label" class="modal fade" id="address_modal_Label"
-         tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    1 rue du rouge gorge<br/>
-                    44260 SAVENAY</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </footer>
 </body>
 </html>

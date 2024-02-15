@@ -19,7 +19,7 @@ main {
   background: #b5b2b2;
   height: 600px;
   overflow-y: scroll;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 .card-subtitle {
@@ -179,15 +179,4 @@ h5,
 .footer-basic a {
   text-decoration: none;
   color: rgba(137, 61, 122, 1);
-}
-
-@media (min-width: 424px) {
-  .footer-mobile {
-    display: none;
-  }
-  @media (max-width: 424px) {
-    .footer-basic {
-      display: none;
-    }
-  }
 }

@@ -1,78 +1,112 @@
 {% include 'components/header.html' %}
 
-
-
 <main class="overflow-auto">
-{% if toaster=='true' %}
+  {% if toaster=='true' %}
 
-    <script>    
-        $(document).ready(function () {
-            $('.toast').toast('show');
-        });
-    </script>
-{% endif %}
+  <script>
+    $(document).ready(function () {
+      $(".toast").toast("show");
+    });
+  </script>
+  {% endif %}
 
-<div class="toast-container position-fixed top-50 start-50 translate-middle-x">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-
+  <div
+    class="toast-container position-fixed top-50 start-50 translate-middle-x"
+  >
+    <div
+      id="liveToast"
+      class="toast"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header">
         <strong class="me-auto">Votre message a bien été envoyé</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
     </div>
-</div>
+  </div>
 
-    <div class="container-fluid h-100">
-        <div class="row align-items-center justify-content-center h-100">
-            <div class="col-12 col-md-6 h-100 p-3">
-                <div class="rounded-2 contact_form h-100 p-3 overflow-auto" >
-                    <h5> Si vous souhaitez prendre rendez-vous ou me poser des questions, vous pouvez utiliser le
-                        formulaire ci-dessous</h5>
-                    <form action="{{ url_for('send_mail') }}" class="mt-3" method="post">
-                        <div class="mb-3">
-                            <label for="mail" class="form-label">Adresse e-mail</label>
-                            <input type="email" name="mail" class="form-control" id="mail"
-                                placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="first_name" class="form-label">Votre prénom</label>
-                            <input type="text" name="first_name" class="form-control" id="first_name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Votre nom</label>
-                            <input type="text" name="name" class="form-control" id="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="content" class="form-label ">Votre message</label>
-                            <textarea name="content" class="form-control message_contact" id="content"
-                                rows="3"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn  btn-custom" type="submit">Envoyer</button>
-                        </div>
-                    </form>
-                </div>
+  <div class="container-fluid h-100">
+    <div class="row align-items-center justify-content-center h-100">
+      <div class="col-12 col-md-6 h-100 p-3">
+        <div class="rounded-2 contact_form h-100 p-3 overflow-auto">
+          <h5>
+            Si vous souhaitez prendre rendez-vous ou me poser des questions,
+            vous pouvez utiliser le formulaire ci-dessous
+          </h5>
+          <form action="{{ url_for('send_mail') }}" class="mt-3" method="post">
+            <div class="mb-3">
+              <label for="mail" class="form-label">Adresse e-mail</label>
+              <input
+                type="email"
+                name="mail"
+                class="form-control"
+                id="mail"
+                placeholder="name@example.com"
+              />
             </div>
-            <div class="col-12 col-md-4 h-100 p-3 ">
-                <div class="rounded-2 contact_form h-100 p-3 text-center overflow-auto">
-                    <h5 class="pb-3 pt-3"> Les horaires</h5>
-                    <div class="justify-content-center">
-                        {% for open in opening_hours %}
-                            <div class="row fs-5 mb-2">
-                                <span class="col text-end"> {{ open.day }} </span>
-                                <span class="col text-start">
-                                {% for hour in open.hour%}
-                                <div>{{ hour }}  </div>
-                                {% endfor %}</span>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
+            <div class="mb-3">
+              <label for="first_name" class="form-label">Votre prénom</label>
+              <input
+                type="text"
+                name="first_name"
+                class="form-control"
+                id="first_name"
+              />
             </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Votre nom</label>
+              <input type="text" name="name" class="form-control" id="name" />
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">Votre message</label>
+              <textarea
+                name="content"
+                class="form-control message_contact"
+                id="content"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-custom" type="submit">Envoyer</button>
+            </div>
+          </form>
         </div>
+      </div>
+      <div class="col-12 col-md-4 h-100 p-3">
+        <div class="rounded-2 contact_form h-100 p-3 text-center overflow-auto">
+          <h5 class="pb-3 pt-3">Les horaires</h5>
+          <div class="justify-content-center">
+            {% for open in opening_hours %}
+            <div class="row fs-5 mb-2">
+              <span class="col text-end"> {{ open.day }} </span>
+              <span class="col text-start">
+                {% for hour in open.hour%}
+                <div>{{ hour }}</div>
+                {% endfor %}</span
+              >
+            </div>
+            {% endfor %}
+            <h5 class="pb-3 pt-3">Mes coordonnées</h5>
+            <p class="fs-5">
+              1 rue du rouge gorge<br />
+              44260 SAVENAY
+            </p>
+            <p class="fs-5">
+              Téléphone: 06 63 80 86 10 <br />
+              e-mail: contact@fleurdeserenite.eu
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
+  </div>
 </main>
-
 
 {% include 'components/footer.html' %}

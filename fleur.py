@@ -120,7 +120,7 @@ def send_mail():
                                                                          request.form['first_name'])
     mail_body = ("Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui "
                  "répondre voici son adresse : {2} \n bonne journée")
-    msg = Message(object_mail, sender='contact@fleurdeserenite.eu', recipients=['remi.bonnand@gmail.com'])
+    msg = Message(object_mail, sender=app.config['SENDER'], recipients=[app.config['RECIPIENTS']])
     msg.body = mail_body.format(
         request.form['name'],
         request.form['first_name'],

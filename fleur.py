@@ -129,8 +129,6 @@ def send_mail():
     mail.send(msg)
     with open('static/opening_hours.json', 'rb') as hours:
         data = json.load(hours)
-    with open('static/opening_hours.json', 'rb') as hours:
-        data = json.load(hours)
     return render_template('contactezmoi.html', opening_hours=data, toaster='true')
 
 

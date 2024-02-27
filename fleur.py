@@ -116,15 +116,28 @@ def contact():
 
 @app.route('/send_mail/', methods=["POST"])
 def send_mail():
+    
+    # Vérifie si le champ 'consent' est soumis avec le formulaire
+    consent_given = request.form.get('consent')
+    consentResponse = ""
+    if consent_given and consent_given == 'on':
+        consentResponse = "Je souhaite être recontacté.e, voici mon adresse : {0}".format(request.form['mail'])
+    else:
+        consentResponse = "Je ne souhaite pas être recontacté.e."
+
+    
+    
+    #if request.form['consent'] == 'on':
+    
     object_mail = "{0} {1} cherche a joindre Fleur de sérénité. ".format(request.form['name'],
                                                                          request.form['first_name'])
-    mail_body = ("Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n pour lui "
-                 "répondre voici son adresse : {2} \n bonne journée")
+    mail_body = ("Bonjour Tiffany,\n {0} {1} cherche à vous joindre, voici son message : \n \n {3} \n \n "
+                 " {2} \n bonne journée")
     msg = Message(object_mail, sender=app.config['SENDER'], recipients=[app.config['RECIPIENTS']])
     msg.body = mail_body.format(
         request.form['name'],
         request.form['first_name'],
-        request.form['mail'],
+        consentResponse,
         request.form['content'])
     mail.send(msg)
     with open('static/opening_hours.json', 'rb') as hours:
@@ -150,6 +163,9 @@ def prices():
         data = json.load(prices_json)
     return render_template('prices.html', prices=data)
 
+@app.route('/legal/')
+def legal():
+    return render_template('legal.html')
 
 with app.app_context():
     init()

@@ -74,6 +74,11 @@
               ></textarea>
             </div>
             <div class="col-12">
+              <input type="checkbox" id="consent" name="consent" />
+              <label for="consent"
+                >"En soumettant ce formulaire, j'accepte que les informations
+                saisies soient utilisées pour me recontacter"</label
+              >
               <button class="btn btn-custom" type="submit">Envoyer</button>
             </div>
           </form>
@@ -84,7 +89,7 @@
           <h5 class="pb-3 pt-3">Les horaires</h5>
           <div class="justify-content-center">
             {% for open in opening_hours %}
-            <div class="row fs-5 mb-2">
+            <div class="row fs-5">
               <span class="col text-end"> {{ open.day }} </span>
               <span class="col text-start">
                 {% for hour in open.hour%}
@@ -93,7 +98,7 @@
               >
             </div>
             {% endfor %}
-            <h5 class="pb-3 pt-3">Mes coordonnées</h5>
+            <h5 class="pb-2 pt-3 mt-1">Mes coordonnées</h5>
             <p class="fs-5">
               1 rue du rouge gorge<br />
               44260 SAVENAY

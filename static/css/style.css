@@ -59,6 +59,11 @@ h5,
   text-align: center;
 }
 
+.card-text {
+  text-align: justify;
+  padding-right: 10px;
+}
+
 .card-title {
   height: 50px;
   padding: auto;

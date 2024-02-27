@@ -17,7 +17,6 @@ app = Flask(__name__)
 
 
 app.config.from_pyfile('../config.py')
-#app.config['APPLICATION_ROOT'] = '/6k1CaGxhIwa7GIK23wJo'
 DATABASE = app.config['APPLICATION_DATABASE']
 
 mail = Mail(app)

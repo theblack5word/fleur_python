@@ -15,13 +15,10 @@ from flask import (
 
 app = Flask(__name__)
 
-
 app.config.from_pyfile('../config.py')
 DATABASE = app.config['APPLICATION_DATABASE']
 
 mail = Mail(app)
-
-
 
 # test
 def get_db():

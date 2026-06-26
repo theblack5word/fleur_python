@@ -1,20 +1,22 @@
-<div class="container d-none d-md-none d-lg-block ">
-    <div class="row align-items-center justify-content-evenly p-1 gy-2 ">
-        {% for activity in img_link %}
-<div class="col-lg-4">
-            <div class="card-container m-auto">
-                <div class="card card2">
-                    <div class="card-front row align-items-center">
-                        <img src={{ url_for('static', filename=activity.link) }}
-                            alt={{ activity.alt }} >
-                    </div>
-                    <div class="card-back card-body card  ">
-                        <h5 class="card-title"> {{ activity.title }}</h5>
-                        <p class="card-text overflow-auto text-wrap">{{ activity.description }}</p>
-                    </div>
-                </div>
-            </div>
+<div class="container d-none d-md-none d-lg-block">
+  <div class="row align-items-center justify-content-evenly p-1 gy-2">
+    {% for activity in img_link %}
+    <div class="col-lg-4">
+      <div class="card-container m-auto">
+        <div class="card card2">
+          <div class="card-front row align-items-center">
+            <img src={{ url_for('static', filename=activity.link) }} alt={{
+            activity.alt }} >
+          </div>
+          <div class="card-back card-body card">
+            <h5 class="card-title">{{ activity.title }}</h5>
+            <p class="card-text overflow-auto text-wrap">
+              {{ activity.description }}
+            </p>
+          </div>
         </div>
-        {% endfor %}
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>

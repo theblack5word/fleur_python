@@ -1,6 +1,6 @@
 :root {
   /* hauteur partagee header/footer en desktop */
-  --chrome-height: 160px;
+  --chrome-height: 190px;
   /* hauteur de la photo/carte du "qui suis-je" : bornee pour tenir dans la fenetre */
   --who-photo-h: min(60vh, 560px, calc(100vh - 380px));
 }
@@ -16,7 +16,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 nav ul {
@@ -241,6 +241,60 @@ h5,
   background-position: center bottom;
   background-size: 400px;
 }
+
+/* Tarifs desktop : bulles disposees en arc qui "remontent" du lotus.
+   2 bulles basses sur les cotes, 2 bulles hautes vers le centre.
+   Le centre-bas reste libre pour la fleur (bg_prices). */
+.prices-bubbles {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  /* hauteur = celle du contenu (arc + lotus), bornee, pour un centrage vertical equilibre */
+  height: min(380px, calc(100vh - 360px));
+  margin: 0 auto;
+  /* le lotus est ancre en bas-centre de la scene, les bulles en "sortent" en arc */
+  background: url("/static/medias/img/prices/lotus_prices.png") no-repeat center bottom;
+  background-size: 220px;
+}
+
+.prices-bubbles > .tarif-card {
+  position: absolute;
+}
+
+/* arc : 2 bulles basses sur les cotes (pres de la fleur), 2 bulles hautes au centre (sommet de l'arc) */
+.prices-bubbles > .tarif-card:nth-child(1) {
+  left: 6%;
+  bottom: 6%;
+}
+
+.prices-bubbles > .tarif-card:nth-child(2) {
+  left: 27%;
+  bottom: 52%;
+}
+
+.prices-bubbles > .tarif-card:nth-child(3) {
+  right: 27%;
+  bottom: 52%;
+}
+
+.prices-bubbles > .tarif-card:nth-child(4) {
+  right: 6%;
+  bottom: 6%;
+}
+
+/* grand ecran (lg+) : lotus +50% (220 -> 330px), scene et bulles centrales remontees
+   pour que l'arc reste au-dessus de la fleur agrandie */
+@media (min-width: 992px) {
+  .prices-bubbles {
+    height: min(440px, calc(100vh - 420px));
+    background-size: 330px;
+  }
+
+  .prices-bubbles > .tarif-card:nth-child(2),
+  .prices-bubbles > .tarif-card:nth-child(3) {
+    bottom: 58%;
+  }
+}
 .footer-basic {
   background-color: #ffffff;
   text-decoration: none;
@@ -269,7 +323,21 @@ h5,
     justify-content: center;
   }
 
+  /* logo borne pour que le header tienne dans --chrome-height (= footer) sans rognage */
+  header .py-2 img {
+    max-height: 120px;
+    width: auto;
+  }
+
   .footer-basic {
     height: var(--chrome-height);
+  }
+}
+
+/* taille moyenne (md) : on garde l'arc mais on reduit les bulles pour qu'elles tiennent */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tarif-card {
+    width: 9rem;
+    height: 9rem;
   }
 }

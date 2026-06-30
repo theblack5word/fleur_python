@@ -1,9 +1,22 @@
+:root {
+  /* hauteur partagee header/footer en desktop */
+  --chrome-height: 160px;
+  /* hauteur de la photo/carte du "qui suis-je" : bornee pour tenir dans la fenetre */
+  --who-photo-h: min(60vh, 560px, calc(100vh - 380px));
+}
+
 * {
   font-size: 1em;
 }
 
 html {
   width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav ul {
@@ -17,9 +30,13 @@ nav ul {
 
 main {
   background: #b5b2b2;
-  height: 600px;
-  overflow-y: scroll;
-  margin-bottom: 100px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* centre verticalement le contenu, mais retombe en haut (scrollable) s'il deborde */
+  justify-content: safe center;
 }
 
 .card-subtitle {
@@ -82,30 +99,40 @@ h5,
   height: 100px;
 }
 .presentation_Tiffany {
-  height: 60vh;
+  height: 100%;
 }
 
 .who-i-am-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.who-i-am-text {
-  flex: 2;
+  gap: 1.5rem;
+  padding: 1.5rem;
   height: 100%;
 }
 
+.who-i-am-text,
 .who-i-am-photo {
-  flex: 1;
-  height: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-i-am-text > .card {
+  height: var(--who-photo-h);
+  width: auto;
+  min-width: 0;
+  /* meme hauteur que la photo (1152x1548) => meme largeur, jamais plus large */
+  aspect-ratio: 1152 / 1548;
+  max-width: 100%;
 }
 
 .who-i-am-img {
-  width: 100%;
-  height: 100%;
+  height: var(--who-photo-h);
+  max-width: 100%;
+  width: auto;
   object-fit: contain;
 }
 
@@ -118,6 +145,17 @@ h5,
   .who-i-am-photo {
     flex: none;
     width: 100%;
+    height: auto;
+  }
+
+  .who-i-am-text > .card {
+    max-width: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .presentation_Tiffany {
     height: auto;
   }
 
@@ -137,8 +175,8 @@ h5,
 
 .card-container {
   position: relative;
-  height: 450px;
-  width: 300px;
+  height: 510px;
+  width: 340px;
 }
 
 .card-container:hover .card {
@@ -207,23 +245,31 @@ h5,
   background-color: #ffffff;
   text-decoration: none;
   color: rgba(137, 61, 122, 1);
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  height: 80px;
-  text-align: center;
-}
-.footer-basic {
-  background-color: #ffffff;
-  text-decoration: none;
-  color: rgba(137, 61, 122, 1);
-  height: 100px;
-  width: 100%;
+  flex: 0 0 auto;
+  height: clamp(45px, 7vh, 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .footer-basic a {
   text-decoration: none;
   color: rgba(137, 61, 122, 1);
+}
+
+/* En desktop, le footer a la meme hauteur que le header */
+@media (min-width: 768px) {
+  header {
+    min-height: var(--chrome-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-basic {
+    height: var(--chrome-height);
+  }
 }

@@ -2,7 +2,7 @@
 
 <main>
   <!--affichage des box pour mobile -->
-  <div class="container-fluid pt-5 d-block d-lg-none bg_prices h-100">
+  <div class="container-fluid pt-5 d-block d-md-none bg_prices h-100">
     <div class="row justify-content-center gy-2">
       <div class="col">
         <div class="card rounded-circle tarif-card m-auto">
@@ -80,73 +80,24 @@
 
   <!--affichage des box pour desktop -->
 
-  <div class="container-fluid pt-5 d-none d-lg-block bg_prices h-100">
-    <div class="row align-items-center m-auto">
-      <div
-        class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-3"
-      >
+  <div class="container-fluid d-none d-md-block">
+    <div class="prices-bubbles">
+      {% for price in prices %}
+      <div class="card rounded-circle tarif-card">
         <a
-          data-bs-target="#{{ prices[0].name }}_modal_Label"
+          data-bs-target="#{{ price.name }}_modal_Label"
           data-bs-toggle="modal"
         >
           <div class="card-body text-center" title="cliquez">
             <p></p>
-            <h5 class="card-title">{{ prices[0].content.title }}</h5>
+            <h5 class="card-title">{{ price.content.title }}</h5>
             <h6 class="card-subtitle mt-4 text-body-secondary">
-              {{ prices[0].content.price }}
+              {{ price.content.price }}
             </h6>
           </div>
         </a>
       </div>
-      <div
-        class="card rounded-circle tarif-card col-xs-6 offset-xxl-2 offset-lg-2"
-      >
-        <a
-          data-bs-target="#{{ prices[1].name }}_modal_Label"
-          data-bs-toggle="modal"
-        >
-          <div class="card-body text-center" title="cliquez">
-            <p></p>
-            <h5 class="card-title">{{ prices[1].content.title }}</h5>
-            <h6 class="card-subtitle mt-4 text-body-secondary">
-              {{ prices[1].content.price }}
-            </h6>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-2"></div>
-      <div
-        class="card rounded-circle tarif-card col-xs-6 offset-xxl-3 offset-lg-2"
-      >
-        <a
-          data-bs-target="#{{ prices[2].name }}_modal_Label"
-          data-bs-toggle="modal"
-        >
-          <div class="card-body text-center" title="cliquez">
-            <p></p>
-            <h5 class="card-title">{{ prices[2].content.title }}</h5>
-            <h6 class="card-subtitle mt-4 text-body-secondary">
-              {{ prices[2].content.price }}
-            </h6>
-          </div>
-        </a>
-      </div>
-      <div
-        class="card rounded-circle tarif-card col-xs-6 offset-xxl-4 offset-lg-4"
-      >
-        <a
-          data-bs-target="#{{ prices[3].name }}_modal_Label"
-          data-bs-toggle="modal"
-        >
-          <div class="card-body text-center" title="cliquez">
-            <p></p>
-            <h5 class="card-title">{{ prices[3].content.title }}</h5>
-            <h6 class="card-subtitle mt-4 text-body-secondary">
-              {{ prices[3].content.price }}
-            </h6>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 

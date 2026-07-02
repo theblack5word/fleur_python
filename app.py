@@ -3,6 +3,7 @@ import datetime
 import locale
 import sqlite3
 import json
+import time
 
 from flask_mail import Mail, Message
 from flask import (
@@ -20,6 +21,10 @@ app.config.from_pyfile('../config.py')
 DATABASE = app.config['APPLICATION_DATABASE']
 
 mail = Mail(app)
+
+# Délai minimum (en secondes) entre l'affichage du formulaire et son envoi.
+# En dessous, on considère que c'est un robot.
+MIN_FORM_SECONDS = 4
 
 # test
 def get_db():
@@ -108,12 +113,30 @@ def comments():
 def contact():
     with open('static/opening_hours.json', 'rb') as hours:
         data = json.load(hours)
-    return render_template('contactezmoi.html', opening_hours=data, toaster='false')
+    return render_template('contactezmoi.html', opening_hours=data, toaster='false',
+                           form_ts=int(time.time()))
 
 
 @app.route('/send_mail/', methods=["POST"])
 def send_mail():
-    
+
+    # --- Anti-spam ---
+    # 1) Honeypot : champ caché que seuls les robots remplissent.
+    # 2) Contrôle de temps : un envoi trop rapide = robot.
+    # Dans les deux cas on fait comme si tout s'était bien passé (on affiche
+    # le message de succès) mais on n'envoie aucun e-mail.
+    honeypot = request.form.get('website', '')
+    try:
+        elapsed = int(time.time()) - int(request.form.get('form_ts', 0))
+    except (TypeError, ValueError):
+        elapsed = 0
+
+    if honeypot or elapsed < MIN_FORM_SECONDS:
+        with open('static/opening_hours.json', 'rb') as hours:
+            data = json.load(hours)
+        return render_template('contactezmoi.html', opening_hours=data,
+                               toaster='true', form_ts=int(time.time()))
+
     # Vérifie si le champ 'consent' est soumis avec le formulaire
     consent_given = request.form.get('consent')
     consentResponse = ""
@@ -139,7 +162,8 @@ def send_mail():
     mail.send(msg)
     with open('static/opening_hours.json', 'rb') as hours:
         data = json.load(hours)
-    return render_template('contactezmoi.html', opening_hours=data, toaster='true')
+    return render_template('contactezmoi.html', opening_hours=data, toaster='true',
+                           form_ts=int(time.time()))
 
 
 @app.route('/who_i_am/')

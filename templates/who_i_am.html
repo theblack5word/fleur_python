@@ -2,10 +2,9 @@
 
 <main class="overflow-auto ">
 
-    <div class="container-fluid h-100">
-        <div class="row align-items-center justify-content-center h-100 mx-5">
-            <div class="col-12 col-md-6 p-3 h-100 ">
-                <div class="container card bg-light p-3 text-wrap presentation_Tiffany h-100 rounded-2">
+    <div class="who-i-am-container h-100">
+            <div class="who-i-am-text">
+                <div class="card bg-light p-3 text-wrap presentation_Tiffany rounded-2">
                     <p class="card-text overflow-auto fs-6">
 
                     Après une carrière dans le commerce, l'hôtellerie puis la
@@ -51,10 +50,9 @@
                     </p>
                 </div>
             </div>
-            <div class="col-12 col-md-3 p-3 h-100">
-                <img alt="Photo de Tiffany" class="rounded-2 m-auto h-100" src={{ url_for('static', filename="medias/img/who_i_am/tiffany.jpg") }} />
+            <div class="who-i-am-photo">
+                <img alt="Photo de Tiffany" class="rounded-2 d-block who-i-am-img" src={{ url_for('static', filename="medias/img/who_i_am/tiffany.jpg") }} />
             </div>
-        </div>
     </div>
 </main>
 {% include 'components/footer.html' %}

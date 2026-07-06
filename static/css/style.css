@@ -139,6 +139,8 @@ h5,
 @media (max-width: 767px) {
   .who-i-am-container {
     flex-direction: column;
+    /* hauteur naturelle : evite que le contenu centre deborde sous le header */
+    height: auto;
   }
 
   .who-i-am-text,
@@ -160,8 +162,10 @@ h5,
   }
 
   .who-i-am-img {
+    /* meme largeur que le bloc de texte, hauteur adaptative */
+    width: 100%;
     height: auto;
-    max-height: 350px;
+    max-height: none;
   }
 }
 
